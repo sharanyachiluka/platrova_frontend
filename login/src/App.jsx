@@ -1,6 +1,7 @@
 import React from 'react';
 import bg from './bg.jpg';
 import './index.css';
+import request from 'superagent';
 
 class App extends React.Component {
 	constructor(props) {
@@ -17,10 +18,19 @@ class App extends React.Component {
 	
 	handleSubmit(event) {
         event.preventDefault();
-		this.props.handleSubmit(this.state.name);
-		this.props.handleSubmit(this.state.password);
 		
-    }
+		request
+		.post("http://localhost:9000/users")
+		.send({name: this.state.name ,password: this.state.password})
+		.then(
+		  (response) => {
+			// response.body will be the returned data from your play app, which is an array of objects
+			// I kept the data as object with "place" as the key, and [lat,longs] as value.
+			// following code converts array of objects into the format which my component is accepting.
+			console.log("response is ok");
+		  });
+		
+		}
 
     handleNameChange(event) {
         this.setState({
@@ -44,7 +54,7 @@ class App extends React.Component {
 					
 					<div className="login-form loginw3-agile"> 
 						<div className="agile-row">
-							<h1>Login Form</h1> 
+							<h1>SIGN UP</h1> 
 							<div className="login-agileits-top"> 	
 								<form onSubmit={this.handleSubmit}> 
 									<p>User Name </p>
