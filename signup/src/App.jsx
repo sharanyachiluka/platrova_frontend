@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 import bg from './bg.jpg';
 import './index.css';
 import request from 'superagent';
@@ -76,35 +76,42 @@ class App extends React.Component {
 								<div className="agile-row">
 									<h1>SIGN UP</h1>
 									<div className="login-agileits-top">
-										<form onSubmit={this.handleSubmit}>
+										<form autoComplete= "off" onSubmit={this.handleSubmit}>
 											<p>User Name </p>
 											<input type="text"
-												className="name"
-												id="name"
-												required=""
+											required className="name"
+												required id="name"
+												pattern = "^[A-Za-z0-9_.-@]*$"
+												maxLength = "12"
+												autoFocus
+											    placeholder = "Enter username"
 												onChange={this.handleNameChange}
 												value={this.state.name} />
 											<p>email id </p>
-											<input type="text"
-												className="email"
-												id="email"
-												required=""
+											<input type="email"
+											required className="email"
+												required id="email"
+												autoFocus
+												placeholder = "Enter email id"
 												onChange={this.handleEmailChange}
 												value={this.state.email} />
 											<p>Password</p>
 											<input type="password"
 												className="password"
-												id="password"
-												required pattern ="[0-9][A-Z][A-Za-z -]"
-												required maxLength="8"
+												required id="password"
+												pattern = "^[A-Za-z0-9_.-@]*$"
+												maxLength = "10"
+												autoFocus
+												placeholder = "Enter password"
 												onChange={this.handlePasswordChange}
 												value={this.state.password} />
 											<p>Confirm Password</p>
 											<input type="password"
 												className="confirmpassword"
-												id="confirmpassword"
-												required pattern ="[0-9][A-Z][A-Za-z -]"
-												required maxLength="8"
+												required id="confirmpassword"
+												pattern = "^[A-Za-z0-9_.-@]*$"
+												maxLength = "10"
+												autoFocus												
 												onChange={this.handleConfirmPasswordChange}
 												value={this.state.confirmPassword} />
 											<label className="anim">

@@ -65,7 +65,7 @@ h1 {
 	-ms-border-radius: 15px;
     border-radius: 15px;
 }
-.login-form input[type="text"], .login-form input[type="password"] {
+.login-form input[type="text"], .login-form input[type="email"], .login-form input[type="password"], .login-form input[type="confirmPassword"] {
     outline: none;
     font-size: 1em;
     color: #000;
@@ -80,7 +80,7 @@ h1 {
     -moz-border-radius: 2px;
 	-o-border-radius: 2px;
 	-ms-border-radius: 2px;
-    border-radius: 2px;
+	border-radius: 2px;
 } 
 .login-form p {
     font-size: 0.9em;
@@ -88,6 +88,15 @@ h1 {
     margin:1.8em 0 .5em;
     letter-spacing: 1px;
 }
+
+
+.login-form input:not(:focus):invalid {
+	outline: 2px solid rgb(136, 241, 236);
+  }
+  input:focus:invalid {
+	outline: 2px solid rgb(231, 130, 130);
+  }
+
 /*-- checkbox --*/
 .anim {
     font-size: 0.9em;
