@@ -24,7 +24,7 @@ class App extends React.Component {
 		event.preventDefault();
 
 		request
-			.post("http://localhost:9000/users")
+			.post("http://10.10.200.21:9000/users")
 			.send({ name: this.state.name, email: this.state.email, password: this.state.password, confirmPassword: this.state.confirmPassword })
 			.then(
 			(response) => {
@@ -95,7 +95,7 @@ class App extends React.Component {
 											<input type="password"
 												className="password"
 												id="password"
-												required pattern ="[0-9][A-Z][A-Za-z -]"
+												
 												required maxLength="8"
 												onChange={this.handlePasswordChange}
 												value={this.state.password} />
@@ -103,7 +103,7 @@ class App extends React.Component {
 											<input type="password"
 												className="confirmpassword"
 												id="confirmpassword"
-												required pattern ="[0-9][A-Z][A-Za-z -]"
+												
 												required maxLength="8"
 												onChange={this.handleConfirmPasswordChange}
 												value={this.state.confirmPassword} />
