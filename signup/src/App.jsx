@@ -24,7 +24,7 @@ class App extends React.Component {
 		event.preventDefault();
 
 		request
-			.post("http://localhost:9000/users")
+			.post("http://10.10.200.21:9000/users")
 			.send({ name: this.state.name, email: this.state.email, password: this.state.password, confirmPassword: this.state.confirmPassword })
 			.then(
 			(response) => {
@@ -98,20 +98,32 @@ class App extends React.Component {
 											<p>Password</p>
 											<input type="password"
 												className="password"
+<<<<<<< HEAD
 												required id="password"
 												pattern = "^[A-Za-z0-9_.-@]*$"
 												maxLength = "10"
 												autoFocus
 												placeholder = "Enter password"
+=======
+												id="password"
+												
+												required maxLength="8"
+>>>>>>> 0a6e3cdd9e00f67e148fd4841841e0566b65e0c6
 												onChange={this.handlePasswordChange}
 												value={this.state.password} />
 											<p>Confirm Password</p>
 											<input type="password"
 												className="confirmpassword"
+<<<<<<< HEAD
 												required id="confirmpassword"
 												pattern = "^[A-Za-z0-9_.-@]*$"
 												maxLength = "10"
 												autoFocus												
+=======
+												id="confirmpassword"
+												
+												required maxLength="8"
+>>>>>>> 0a6e3cdd9e00f67e148fd4841841e0566b65e0c6
 												onChange={this.handleConfirmPasswordChange}
 												value={this.state.confirmPassword} />
 											<label className="anim">
