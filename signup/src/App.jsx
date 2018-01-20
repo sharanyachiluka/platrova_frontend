@@ -98,32 +98,26 @@ class App extends React.Component {
 											<p>Password</p>
 											<input type="password"
 												className="password"
-<<<<<<< HEAD
 												required id="password"
 												pattern = "^[A-Za-z0-9_.-@]*$"
 												maxLength = "10"
 												autoFocus
 												placeholder = "Enter password"
-=======
 												id="password"
 												
 												required maxLength="8"
->>>>>>> 0a6e3cdd9e00f67e148fd4841841e0566b65e0c6
+
 												onChange={this.handlePasswordChange}
 												value={this.state.password} />
 											<p>Confirm Password</p>
 											<input type="password"
 												className="confirmpassword"
-<<<<<<< HEAD
 												required id="confirmpassword"
 												pattern = "^[A-Za-z0-9_.-@]*$"
 												maxLength = "10"
 												autoFocus												
-=======
 												id="confirmpassword"
-												
 												required maxLength="8"
->>>>>>> 0a6e3cdd9e00f67e148fd4841841e0566b65e0c6
 												onChange={this.handleConfirmPasswordChange}
 												value={this.state.confirmPassword} />
 											<label className="anim">
@@ -142,6 +136,7 @@ class App extends React.Component {
 					</div>
 				</div>
 			</div>
+
 		);
 	}
 }
