@@ -21,18 +21,33 @@ class App extends React.Component {
 	}
 
 	handleSubmit(event) {
+
 		event.preventDefault();
 
-		request
-			.post("http://10.10.200.21:9000/users")
-			.send({ name: this.state.name, email: this.state.email, password: this.state.password, confirmPassword: this.state.confirmPassword })
-			.then(
-			(response) => {
-				// response.body will be the returned data from your play app, which is an array of objects
-				// I kept the data as object with "place" as the key, and [lat,longs] as value.
-				// following code converts array of objects into the format which my component is accepting.
-				console.log("response is ok");
-			});
+		this.setState({ value: event.target.value });
+
+		var name = document.getElementById('name').value;
+		var email = document.getElementById('email').value;
+		var password = document.getElementById('password').value;
+		var confirmPassword = document.getElementById('confirmPassword').value;
+
+		if (password === confirmPassword) {
+
+			request
+				.post("http://localhost:9000/users")
+				.send({ name: name, email: email, password: password })
+				.then(
+				(response) => {
+					// response.body will be the returned data from your play app, which is an array of objects
+					// I kept the data as object with "place" as the key, and [lat,longs] as value.
+					// following code converts array of objects into the format which my component is accepting.
+					console.log("response is ok");
+				});
+		}
+		else {
+			//	console.log("nope");
+			alert("Password and confirm password are not matching");
+		}
 
 	}
 
@@ -40,18 +55,40 @@ class App extends React.Component {
 		this.setState({
 			name: event.target.value,
 		});
+		var name = document.getElementById("name");
+		name.addEventListener("input", function (event) {
+
+			if (name.validity.patternMismatch) {
+				name.setCustomValidity("Username must contain only alphabets and numbers!");
+			}
+			else {
+				name.setCustomValidity("");
+			}
+		});
+
 	}
 
 	handleEmailChange(event) {
 		this.setState({
 			email: event.target.value,
 		});
+		var email = document.getElementById("email");
+		email.addEventListener("input", function (event) {
+			if (email.validity.typeMismatch) {
+				email.setCustomValidity("I expect an e-mail, darling!");
+			} else {
+				email.setCustomValidity("");
+			}
+		});
 	}
 
 	handlePasswordChange(event) {
 		this.setState({
 			password: event.target.value,
+
 		});
+
+
 	}
 
 	handleConfirmPasswordChange(event) {
@@ -59,6 +96,7 @@ class App extends React.Component {
 			confirmPassword: event.target.value,
 
 		});
+
 	}
 
 
@@ -76,35 +114,43 @@ class App extends React.Component {
 								<div className="agile-row">
 									<h1>SIGN UP</h1>
 									<div className="login-agileits-top">
-										<form onSubmit={this.handleSubmit}>
+										<form autoComplete="off" onSubmit={this.handleSubmit}>
 											<p>User Name </p>
 											<input type="text"
 												className="name"
 												id="name"
-												required=""
+												pattern="^[A-Za-z0-9_.-@]*$"
+												maxLength="12"
+												autoFocus
+												placeholder="Enter username"
 												onChange={this.handleNameChange}
-												value={this.state.name} />
+												value={this.state.name} required />
 											<p>email id </p>
-											<input type="text"
+											<input type="email"
 												className="email"
 												id="email"
-												required=""
+												autoFocus
+												placeholder="Enter email id"
 												onChange={this.handleEmailChange}
-												value={this.state.email} />
+												value={this.state.email} required />
 											<p>Password</p>
 											<input type="password"
 												className="password"
 												id="password"
-												
-												required maxLength="8"
+												required pattern="^[A-Za-z0-9_.-@]*$"
+												required minLength="6" maxLength="10"
+												autoFocus
+												placeholder="Enter password"
 												onChange={this.handlePasswordChange}
 												value={this.state.password} />
 											<p>Confirm Password</p>
 											<input type="password"
-												className="confirmpassword"
-												id="confirmpassword"
-												
-												required maxLength="8"
+												className="confirmPassword"
+												id="confirmPassword"
+												required pattern="^[A-Za-z0-9_.-@]*$"
+												required minLength="6" maxLength="10"
+												autoFocus
+												placeholder="Re-enter password"
 												onChange={this.handleConfirmPasswordChange}
 												value={this.state.confirmPassword} />
 											<label className="anim">
@@ -123,6 +169,7 @@ class App extends React.Component {
 					</div>
 				</div>
 			</div>
+
 		);
 	}
 }
