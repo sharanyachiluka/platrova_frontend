@@ -51,7 +51,9 @@ class App extends React.Component {
 	handlePasswordChange(event) {
 		this.setState({
 			password: event.target.value,
+		
 		});
+		
 	}
 
 	handleConfirmPasswordChange(event) {
@@ -79,45 +81,39 @@ class App extends React.Component {
 										<form autoComplete= "off" onSubmit={this.handleSubmit}>
 											<p>User Name </p>
 											<input type="text"
-											required className="name"
-												required id="name"
+												className="name"
+												id="name"
 												pattern = "^[A-Za-z0-9_.-@]*$"
 												maxLength = "12"
 												autoFocus
 											    placeholder = "Enter username"
 												onChange={this.handleNameChange}
-												value={this.state.name} />
+												value={this.state.name} required/>
 											<p>email id </p>
 											<input type="email"
-											required className="email"
-												required id="email"
+												 className="email"
+												 id="email"
 												autoFocus
 												placeholder = "Enter email id"
 												onChange={this.handleEmailChange}
-												value={this.state.email} />
+												value={this.state.email} required/>
 											<p>Password</p>
 											<input type="password"
 												className="password"
-												required id="password"
-												pattern = "^[A-Za-z0-9_.-@]*$"
+												id="password"
+												required pattern = "^[A-Za-z0-9_.-@]*$"
 												maxLength = "10"
 												autoFocus
 												placeholder = "Enter password"
-												id="password"
-												
-												required maxLength="8"
-
 												onChange={this.handlePasswordChange}
-												value={this.state.password} />
+												value={this.state.password}/>
 											<p>Confirm Password</p>
 											<input type="password"
 												className="confirmpassword"
-												required id="confirmpassword"
-												pattern = "^[A-Za-z0-9_.-@]*$"
-												maxLength = "10"
-												autoFocus												
 												id="confirmpassword"
-												required maxLength="8"
+												required pattern = "^[A-Za-z0-9_.-@]*$"
+												required maxLength = "10"
+												autoFocus												
 												onChange={this.handleConfirmPasswordChange}
 												value={this.state.confirmPassword} />
 											<label className="anim">
