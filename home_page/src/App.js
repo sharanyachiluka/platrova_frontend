@@ -27,9 +27,7 @@ class App extends React.Component {
             <div className="row">
               <div className="col-lg-12 col-md-12 col-sm-12">
                 <div className="menu">
-                  <div className="mobile-nav-container"> </div>
-                  <div className="mobile-nav-btn"><img className="nav-open" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/6214/nav-open.png" alt="Nav Button Open" /> <img className="nav-close" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/6214/nav-close.png" alt="Nav Button Close" /> </div>
-                  <nav>
+                 <nav>
                     <ul>
                       <li><a href="#home">Home</a></li>
                       <li><a href="#resturant">Popular Restaurants </a></li>
@@ -54,43 +52,28 @@ class App extends React.Component {
                 <div className="back">
                   <div className="line1 os-animation" data-os-animation="rotateInDownLeft" data-os-animation-delay="1s"> </div>
                   <div className="line2 os-animation" data-os-animation="rotateInDownLeft" data-os-animation-delay="1s"> </div>
-                  <h1 className="os-animation" data-os-animation="zoomIn" data-os-animation-delay="1s">PLATROVA</h1>
-                  <h3 className="os-animation" data-os-animation="zoomIn" data-os-animation-delay="0.50s">PLATROVA</h3>
-                  
+                  <h2  className="os-animation" data-os-animation="zoomIn" data-os-animation-delay="0.50s"><font face="verdana" size="45">PLATROVA</font></h2>
                   <div className="line3 os-animation" data-os-animation="rotateInDownRight" data-os-animation-delay="1s"> </div>
                   <div className="line4 os-animation" data-os-animation="rotateInDownRight" data-os-animation-delay="1s"> </div>
-                  <h2 className="os-animation" data-os-animation="zoomIn" data-os-animation-delay="0.50s">Network of over 5000 Restaurants</h2>
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 col-md-4 col-sm-4">
-              <div className="textbox os-animation" data-os-animation="zoomIn" data-os-animation-delay="0.5s">
-                <h3>Location Name</h3>
-                <input type="text" placeholder="Secunderabad" />
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-4 col-sm-4">
-              <div className="textbox os-animation" data-os-animation="zoomIn" data-os-animation-delay="0.5s">
-                <h3>Restaurant Name</h3>
-                <input type="text" placeholder="Swagath Grand" />
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-4 col-sm-4">
-              <div className="textbox1 os-animation" data-os-animation="zoomIn" data-os-animation-delay="0.5s">
-                <h3>Cuisine Name</h3>
-                <input type="text" placeholder="Chicken Biriyani" />
-                <span className="search"><a href="#"><i className="fa fa-search"></i></a></span> </div>
-            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="textbox1 os-animation" data-os-animation="zoomIn" data-os-animation-delay="0.5s">
+              <br></br>
+              <center><input type="text" placeholder="Enter your location here......." /><span class="search"><a href="#"><i class="fa fa-search"></i></a></span></center>
+               </div>
           </div>
-        </section>
+            </div>
+         </section>
         <section className="saction3">
           <div className="container">
             <div className="row">
               <div className="col-lg-12 col-md-12 col-sm-12">
                 <div className="ordaring">
-                  <h2 className="os-animation" data-os-animation="zoomIn" data-os-animation-delay="0.50s">Ordering food was never so easy</h2>
+                  <h2 className="os-animation" data-os-animation="zoomIn" data-os-animation-delay="0.50s">Find the restaurants nearby easily</h2>
                   <div className="dotted os-animation" data-os-animation="bounceInLeft" data-os-animation-delay="1s"></div>
-                  <p className="os-animation" data-os-animation="zoomIn" data-os-animation-delay="0.50s">Just 4 stap follow</p>
+                  <p className="os-animation" data-os-animation="zoomIn" data-os-animation-delay="0.50s">4 easy steps to follow</p>
                   <div className="dotted1 os-animation" data-os-animation="bounceInRight" data-os-animation-delay="1s"></div>
                 </div>
               </div>
@@ -358,16 +341,7 @@ class App extends React.Component {
             </div>
           </div>
         </footer>
-        <footer className="saction9">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-12 col-md-12 col-sm-12">
-                <div className="email">&copy; All right reserved 2014  /  FoodFinder </div>
-                <p className="freetemplates">Free Template by <a href="http://freetemplates.pro/">FreeTemplates.pro</a></p>
-              </div>
-            </div>
-          </div>
-        </footer>
+        
         <script type="text/javascript" src="js/sidemenu.js"></script>
       </body>
     );

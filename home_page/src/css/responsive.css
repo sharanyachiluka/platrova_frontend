@@ -677,6 +677,9 @@ header {
 	padding-right: 10px;
 	font-size: 15px;
 }
+.back h1 {
+	font-size: 45px;
+}
 .back h2 {
 	margin-top: 40px;
 	font-size: 25px;
@@ -880,6 +883,9 @@ header {
 	margin-left: 5px;
 	font-size: 12px;
 	padding-right: 5px;
+}
+.back h1 {
+	font-size: 45px;
 }
 .back h2 {
 	margin-top: 40px;
