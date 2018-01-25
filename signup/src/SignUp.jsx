@@ -1,9 +1,9 @@
 import React from 'react';
 import bg from './bg.jpg';
-import './index.css';
+import './SignUp.css';
 import request from 'superagent';
 
-class App extends React.Component {
+class SignUp extends React.Component {
 	constructor(props) {
 		super(props);
 
@@ -174,4 +174,4 @@ class App extends React.Component {
 	}
 }
 
-export default App;
+export default SignUp;
