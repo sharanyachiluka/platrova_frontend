@@ -88,7 +88,9 @@ h2.wthree {
     float: left;
     width: 43%;
     margin-top: 7em;
+    
 }
+
 label.header {
     margin: 0.5em 0 1em;
     font-size: 1em;
@@ -131,14 +133,7 @@ label.header {
     color: #000;
     background: transparent;
 }
-p.footer {
-    text-align: center;
-    color: #fff;
-    padding-bottom:3em;
-}
-p.footer a{
-    color:#fff;
-}
+
 /* -- Responsive code -- */
 @media screen and (max-width: 1920px){
     h1.wthree {
