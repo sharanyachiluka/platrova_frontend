@@ -10,6 +10,7 @@ class Header extends React.Component {
              <div className="btn-group" >
                 <Link to='/signup'> <button >SIGN UP</button></ Link>
                 <Link to='/login'> <button >LOGIN</button></Link>    
+                
             </div>
             
         );

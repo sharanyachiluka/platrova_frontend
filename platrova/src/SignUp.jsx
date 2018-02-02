@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 
 import './SignUp.css';
+import Search from './Search';
 
 import request from 'superagent';
 

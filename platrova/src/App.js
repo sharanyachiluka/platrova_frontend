@@ -5,6 +5,7 @@ import Header from './Header';
 import Footer from './Footer';
 import LoginForm from './LoginForm';
 import SignUp from './SignUp';
+import Search from "./Search";
 
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
             <Header/>
               <Route  path="/signup" exact component={SignUp} />
               <Route  path="/login" exact component={LoginForm} />
+              <Route  path="/home" exact component={Search} />
              <Footer/>
        </div>
     );
