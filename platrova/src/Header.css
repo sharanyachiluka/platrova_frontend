@@ -4,7 +4,7 @@
 }
 .btn-group button {
     background-color: rgb(7, 7, 7); /* Green background */
-    border: 1px solid rgb(119, 131, 119); /* Green border */
+   /* border: 1px solid rgb(119, 131, 119); /* Green border */ 
     color: rgb(255, 251, 251); /* White text */
     padding: 10px 24px; /* Some padding */
     cursor: pointer; /* Pointer/hand icon */

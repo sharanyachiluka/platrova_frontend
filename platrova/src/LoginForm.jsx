@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import grid from './grid.png'; 
+//import grid from './grid.png'; 
 import './LoginForm.css';
 import request from 'superagent';
 
