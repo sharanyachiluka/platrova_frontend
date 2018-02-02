@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import bg from './bg.jpg';
+
 import './SignUp.css';
-import {Router,Route,browserHistory} from "react-router";
+
 import request from 'superagent';
 
 import LoginForm from './LoginForm';
@@ -169,7 +169,7 @@ class SignUp extends React.Component {
 										</form>
 									</div>
 									<div className="login-agileits-bottom wthree">
-										<h6><Router><Route path={"/"} component={LoginForm}> Already a user? Login</Route></Router></h6>
+										<h6> Already a user? Login</h6>
 									</div>
 								</div>
 							</div>
