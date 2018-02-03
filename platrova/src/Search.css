@@ -2,17 +2,30 @@ body{
     background: #202a3f;
    }
    .container{
-    margin-top: 150px;
+    margin-top: 8px;
    }
    .glyphicon-search{
     font-size: 20px;
    }
-   .btn-default{
-    background: red;
-    width: 100px;
-    padding: 12.5px;
+
+   .image{
+       position: relative;
+       background-image: url(slide1.jpg);
+       height: 50%;
+       width: 100%;
+       display:flex;
+       justify-content: center;
+       align-items: center;
+       background-size:initial;
+       background-repeat: no-repeat;
+       background-position: center center;
+       
    }
-   .form-control{
-    padding: 20px;
+   
+   .pull-right{
+       float:right;
+   }
+     .form-control{
+    padding: 5px;
     font-size: 20px;
    }
