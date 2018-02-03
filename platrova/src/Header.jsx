@@ -1,18 +1,28 @@
 import React from 'react';
 import './Header.css';
-import {BrowserRouter,Router,Link} from 'react-router-dom';
-
+import { BrowserRouter, Router, Link } from 'react-router-dom';
+import { ButtonToolbar, Button, Nav, Navbar, FormGroup } from 'react-bootstrap';
+import logo from './logo.png';
 
 class Header extends React.Component {
-    render () {
+    render() {
         return (
-
-             <div className="btn-group" >
-                <Link to='/signup'> <button >SIGN UP</button></ Link>
-                <Link to='/login'> <button >LOGIN</button></Link>    
-                
+            <div class="header">
+                <div id="header-sroll">
+                    <Navbar.Form>
+                        <Navbar.Brand>
+                            <Link to='/' class="active">PLATROVA</Link>
+                        </Navbar.Brand>
+                        <Nav pullRight>
+                            <ButtonToolbar>
+                                <Button bsStyle="danger"><Link to='/login' class="active">Login</Link></Button>
+                                <Button bsStyle="danger"><Link to='/signup' class="active">Signup</Link></Button>
+                            </ButtonToolbar>
+                        </Nav>
+                    </Navbar.Form>
+                </div>
             </div>
-            
+
         );
     }
 }
