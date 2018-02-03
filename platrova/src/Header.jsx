@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.css';
 import { BrowserRouter, Router, Link } from 'react-router-dom';
 import { ButtonToolbar, Button, Nav, Navbar, FormGroup } from 'react-bootstrap';
-import logo from './logo.png';
+
 
 class Header extends React.Component {
     render() {

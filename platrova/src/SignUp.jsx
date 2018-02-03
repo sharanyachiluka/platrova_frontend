@@ -47,9 +47,6 @@ class SignUp extends React.Component {
 					// I kept the data as object with "place" as the key, and [lat,longs] as value.
 					// following code converts array of objects into the format which my component is accepting.
 					console.log("response is ok");
-			
-
-
 				});
 		}
 		else {
@@ -93,22 +90,14 @@ class SignUp extends React.Component {
 	handlePasswordChange(event) {
 		this.setState({
 			password: event.target.value,
-
 		});
-
-
 	}
 
 	handleConfirmPasswordChange(event) {
 		this.setState({
 			confirmPassword: event.target.value,
-
 		});
-
 	}
-
-
-
 
 	render() {
 		return (
