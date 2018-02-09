@@ -11,22 +11,25 @@
   .hovereffect .overlay {
     position: absolute;
     overflow: hidden;
-    opacity: 0;
-    filter: alpha(opacity=0);
-    width: 55%;
-    height: 81%;
-    left: 22%;
+    width: 80%;
+    height: 80%;
+    left: 10%;
     top: 10%;
-    border-radius: 80%;
-    border: 2px solid #FFF;
+    border-bottom: 1px solid #FFF;
+    border-top: 1px solid #FFF;
     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
     transition: opacity 0.35s, transform 0.35s;
-    -webkit-transform: translate3d(50%,50%,0);
-    transform: translate3d(50%,50%,0);
+    -webkit-transform: scale(0,1);
+    -ms-transform: scale(0,1);
+    transform: scale(0,1);
   }
   
   .hovereffect:hover .overlay {
-    background-color: rgba(0,0,0,0.3);
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
   }
   
   .hovereffect img {
@@ -37,9 +40,9 @@
   }
   
   .hovereffect:hover img {
-    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1.4" /><feFuncG type="linear" slope="1.4" /><feFuncB type="linear" slope="1.4" /></feComponentTransfer></filter></svg>#filter');
-    filter: brightness(1.4);
-    -webkit-filter: brightness(1.4);
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.6" /><feFuncG type="linear" slope="0.6" /><feFuncB type="linear" slope="0.6" /></feComponentTransfer></filter></svg>#filter');
+    filter: brightness(0.6);
+    -webkit-filter: brightness(0.6);
   }
   
   .hovereffect h2 {
@@ -47,7 +50,6 @@
     text-align: center;
     position: relative;
     font-size: 17px;
-    padding: 10px;
     background-color: transparent;
     color: #FFF;
     padding: 1em 0;
@@ -55,8 +57,8 @@
     filter: alpha(opacity=0);
     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
     transition: opacity 0.35s, transform 0.35s;
-    -webkit-transform: translate3d(-150%,-400%,0);
-    transform: translate3d(-150%,-400%,0);
+    -webkit-transform: translate3d(0,-100%,0);
+    transform: translate3d(0,-100%,0);
   }
   
   .hovereffect a, .hovereffect p {
@@ -66,11 +68,11 @@
     filter: alpha(opacity=0);
     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
     transition: opacity 0.35s, transform 0.35s;
-    -webkit-transform: translate3d(-150%,-400%,0);
-    transform: translate3d(-150%,-400%,0);
+    -webkit-transform: translate3d(0,100%,0);
+    transform: translate3d(0,100%,0);
   }
   
-  .hovereffect:hover a, .hovereffect:hover p, .hovereffect:hover h2, .hovereffect:hover .overlay {
+  .hovereffect:hover a, .hovereffect:hover p, .hovereffect:hover h2 {
     opacity: 1;
     filter: alpha(opacity=100);
     -webkit-transform: translate3d(0,0,0);
