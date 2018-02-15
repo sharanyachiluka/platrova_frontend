@@ -11,7 +11,7 @@ class Header extends React.Component {
                 <div id="header-sroll">
                     <Navbar.Form>
                         <Navbar.Brand>
-                            <Link to='/' class="active">PLATROVA</Link>
+                            <Link to='/' class="white">PLATROVA</Link>
                         </Navbar.Brand>
                         <Nav pullRight>
                             <ButtonToolbar>

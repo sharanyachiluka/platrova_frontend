@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-
-
+import { BrowserRouter, Router, Link } from 'react-router-dom';
 import './SignUp.css';
 import Search from './Search';
-
+import image from './image.jpg';
 import request from 'superagent';
 
 import LoginForm from './LoginForm';
@@ -151,15 +150,12 @@ class SignUp extends React.Component {
 												placeholder="Re-enter password"
 												onChange={this.handleConfirmPasswordChange}
 												value={this.state.confirmPassword} />
-											<label className="anim">
-												<input type="checkbox" className="checkbox" />
-												<span> Remember me ?</span>
-											</label>
+											<br />
 											<input type="submit" value="Sign up" />
 										</form>
 									</div>
 									<div className="login-agileits-bottom wthree">
-										<h6> Already a user? Login</h6>
+										<h6><Link to='/login' class="active"> Already a user? Login</Link></h6>
 									</div>
 								</div>
 							</div>

@@ -1,27 +1,9 @@
-body{
-    background: #202a3f;
-   }
-   .container{
-    margin-top: 130px;
-   }
-   .glyphicon-search{
+.position {
+    background-repeat: no-repeat;
+}
+.glyphicon-search{
     font-size: 20px;
    }
-
-   .image{
-       position: relative;
-       background-image: url(slide1.jpg);
-       height: 50%;
-       width: 100%;
-       display:flex;
-       justify-content: center;
-       align-items: center;
-       background-size:initial;
-       background-repeat: no-repeat;
-       background-position: center center;
-       
-   }
-   
    .pull-right{
        float:right;
    }
@@ -29,3 +11,20 @@ body{
     padding: 5px;
     font-size: 20px;
    }
+   .btn-btn-block{
+       display:flex;
+       -webkit-box-pack: center;
+       justify-content: center;
+   }
+   .centered {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.mytext {
+    font-family:cursive ;
+    font-style: inherit;
+    color: rgb(255, 255, 255);
+    font-size: 1in;
+}

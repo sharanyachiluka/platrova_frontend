@@ -9,10 +9,12 @@ class LoginForm extends React.Component {
 		 super(props);
 
 		 this.state ={
+			 name:"",
 			 email:"",
 			 password:"",
 		 };
 		 this.handleSubmit=this.handleSubmit.bind(this);
+		 this.handleNameChange=this.handleNameChange.bind(this);
 		 this.handleEmailChange=this.handleEmailChange.bind(this);
 		 this.handlePasswordChange=this.handlePasswordChange.bind(this);
 	 }
@@ -39,13 +41,27 @@ class LoginForm extends React.Component {
 		     
 	 }
 
+	 handleNameChange(event) {
+		 this.setState({
+			 name: event.target.value,
+		 });
+	 }
+
 	 handleEmailChange(event) {
 		this.setState({
 			email: event.target.value,
-
 		});
-
+		var email = document.getElementById("email");
+		email.addEventListener("input", function (event) {
+			if (email.validity.typeMismatch) {
+				email.setCustomValidity("I expect an e-mail, darling!");
+			} else {
+				email.setCustomValidity("");
+			}
+		});
 	}
+
+	
 
 		handlePasswordChange(event) {
 			this.setState({
@@ -56,45 +72,57 @@ class LoginForm extends React.Component {
 	}
 	render() {
 		return (
-			<div>
-              <h1 className="wthree">PLATROVA</h1>
-	           <div className="container login-section">	
-		        <div className="login-w3l">	
-			     <div className="login-form">	
-				 <h2 className="wthree">LOGIN</h2>	
-				  <form  className="agile_form" onSubmit={this.handleSubmit}>
-		            <div className="w3ls-name1">
-					 <label className="header">email</label>
-					 <input placeholder="email@example.com" 
-							id="email" 
-							type="email" 
-							required=""
-							onChange={this.handleEmailChange}
-							value={this.state.email}/>
+			
+			<div className="main-agileinfo slider ">
+				<div className="items-group">
+					<div className="item agileits-w3layouts">
+						<div className="block text main-agileits">
+							<span className="circleLight"></span>
+
+							<div className="login-form loginw3-agile">
+								<div className="agile-row">
+									<h1>LOGIN</h1>
+									<div className="login-agileits-top">
+										<form autoComplete="off" onSubmit={this.handleSubmit}>
+											<p>User Name </p>
+											<input type="text"
+												className="name"
+												id="name"
+												pattern="^[A-Za-z0-9_.-@]*$"
+												maxLength="12"
+												autoFocus
+												placeholder="Enter username"
+												onChange={this.handleNameChange}
+												value={this.state.name} required />
+											<p>email id </p>
+											<input type="email"
+												className="email"
+												id="email"
+												autoFocus
+												placeholder="Enter email id"
+												onChange={this.handleEmailChange}
+												value={this.state.email} required />
+											<p>Password</p>
+											<input type="password"
+												className="password"
+												id="password"
+												required pattern="^[A-Za-z0-9_.-@]*$"
+												required minLength="6" maxLength="10"
+												autoFocus
+												placeholder="Enter password"
+												onChange={this.handlePasswordChange}
+												value={this.state.password} />
+											<br />
+											<input type="submit" value="Login" />
+										</form>
+									</div>
+									
+								</div>
+							</div>
+						</div>
 					</div>
-				    <div className="w3ls-name1">
-					 <label className="header">password</label>	
-					 <input placeholder="*****" 
-							id="password" 
-							type="password" 
-							required=""
-							onChange={this.handlePasswordChange}
-							value={this.state.password}/>
-				     </div>
-					 <input type="submit" value="Signup"/><br></br>
-					 <a href="#">Login with Username?</a>
-					 <a href="#">forgot password?</a>	
-					
-					</form>
-			     </div>
-		        </div>	
-			    <div className="login-w3l-bg">
-		        <img src="grid.png"/></div>
-		        <div className="clearfix"></div>	
-	           </div> 
-			   	
-	</div>
-	        
+				</div>
+	        </div>
 			
 		
 		);
