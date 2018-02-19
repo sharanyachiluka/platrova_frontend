@@ -4,9 +4,16 @@ import './SignUp.css';
 import Search from './Search';
 import image from './image.jpg';
 import request from 'superagent';
-
 import LoginForm from './LoginForm';
 
+var divStyle = {
+	width: "100%",
+    height: "1140px",
+	backgroundImage: `url(${image})`,
+    backgroundRepeat: 'no-repeat',
+	backgroundSize:'cover',
+	overflow:'hidden',
+};
 class SignUp extends React.Component {
 	constructor(props) {
 		super(props);
@@ -16,6 +23,7 @@ class SignUp extends React.Component {
 			email: "",
 			password: "",
 			confirmPassword: "",
+			
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleNameChange = this.handleNameChange.bind(this);
@@ -38,14 +46,15 @@ class SignUp extends React.Component {
 		if (password === confirmPassword) {
 
 			request
-				.post("http://localhost:9000/users")
-				.send({ name: name, email: email, password: password })
+				.post("http://10.10.200.22:9000/users")
+				.send({ name: name, email: email, password: password})
 				.then(
 				(response) => {
 					// response.body will be the returned data from your play app, which is an array of objects
 					// I kept the data as object with "place" as the key, and [lat,longs] as value.
 					// following code converts array of objects into the format which my component is accepting.
 					console.log("response is ok");
+					
 				});
 		}
 		else {
@@ -100,7 +109,7 @@ class SignUp extends React.Component {
 
 	render() {
 		return (
-			
+			<div style={divStyle}>
 			<div className="main-agileinfo slider ">
 				<div className="items-group">
 					<div className="item agileits-w3layouts">
@@ -163,7 +172,7 @@ class SignUp extends React.Component {
 					</div>
 				</div>
 			</div>
-			
+			</div>
 		
 		);
 	}

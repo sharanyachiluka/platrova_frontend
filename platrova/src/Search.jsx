@@ -20,7 +20,7 @@ class Search extends React.Component {
             <section style={sectionStyle}>
                 <div className="centered">
                     <div className="col-lg-15" className="col-lg-11">
-                        <div className="mytext"> <center>PLATROVA</center></div>
+                        <div className="mytexts"> <center>PLATROVA</center></div>
                         <div className="form-group">
                             <input type="text" className="form-control" placeholder="Enter the location..." name="search" size="200" />
                         </div>

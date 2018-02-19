@@ -1,53 +1,90 @@
 import React, { Component } from 'react';
-//import grid from './grid.png'; 
+import image from './image.jpg'; 
 import './LoginForm.css';
 import request from 'superagent';
+import {Router,BrowserRouter,Link} from 'react-router-dom';
+import {Button} from 'react-bootstrap';
 
-
+var divStyle = {
+	width: "100%",
+    height: "1140px",
+	backgroundImage: `url(${image})`,
+    backgroundRepeat: 'no-repeat',
+	backgroundSize:'cover',
+	overflow:'hidden',
+};
 class LoginForm extends React.Component {
-	 constructor(props) {
-		 super(props);
+	constructor(props) {
+		super(props);
 
-		 this.state ={
-			 name:"",
-			 email:"",
-			 password:"",
-		 };
-		 this.handleSubmit=this.handleSubmit.bind(this);
-		 this.handleNameChange=this.handleNameChange.bind(this);
-		 this.handleEmailChange=this.handleEmailChange.bind(this);
-		 this.handlePasswordChange=this.handlePasswordChange.bind(this);
-	 }
+		this.state = {
+			name: "",
+			email: "",
+			password: "",
+			json :[],
+		};
+		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleNameChange = this.handleNameChange.bind(this);
+		this.handleEmailChange = this.handleEmailChange.bind(this);
+		this.handlePasswordChange = this.handlePasswordChange.bind(this);
+	}
 
-	 handleSubmit(event) {
+	handleSubmit(event) {
 
-		 event.preventDefault();
+		event.preventDefault();
 
-		 this.setState({ value: event.target.value });
+		this.setState({ value: event.target.value });
 
-		 var email = document.getElementById('email').value;
-		 var password = document.getElementById('password').value;
+		var name = document.getElementById('name').value;
+		var password = document.getElementById('password').value;
+		var accessToken,refreshtoken,expirytime;
+		var role='user';
+		var form = JSON.stringify({name : name, password : password});
+		fetch ( "http://10.10.200.22:9000/users/login" , 
+        {
+            method: "POST",     
+            headers: {
+                "Content-Type": "application/json",
+                "Accept"    :   "application,json"
+                
+              },       
+            body: form, 
+    }).then(result1=>result1.json())
+    .then(function(result1){
+        //accesstoken=window.localStorage.getItem('result1.access_token');
+        //expirytime=window.localStorage.getItem('response.expiry_time');
+        //refreshtoken=window.localStorage.getItem('response.refresh_token');
+        
+        console.log(result1);
+		accessToken = result1.access_token;
+		role=result1.role;
+		console.log(accessToken);
+		/*if(role === user) {
+			<h3>Login Successful</h3>
+		}
+		else {
+			<Button bsStyle="danger"><Link to='/createres' class="active">Create Restaurant</Link></Button>
+		}
+        localStorage.setItem("accessToken",result1.access_token);
+        result1.access_token=localStorage.getItem("accessToken");
+        module.exports={data:"accessToken"};*/
 
-		 request
-				.post("http://10.10.200.21:9000/users/login")
-				.send({ email: email, password: password })
-				.then(
-				(response) => {
-					// response.body will be the returned data from your play app, which is an array of objects
-					// I kept the data as object with "place" as the key, and [lat,longs] as value.
-					// following code converts array of objects into the format which my component is accepting.
-					console.log("response is ok");
-				});
-		     
-	 }
+        
+    })
+    .catch(function(error){
+        console.log(error);
+    });
+        console.log(form);
+    
+    }
 
-	 handleNameChange(event) {
-		 this.setState({
-			 name: event.target.value,
-		 });
-	 }
+	handleNameChange(event) {
+		this.setState({
+			name: event.target.value,
+		});
+	}
 
-	 handleEmailChange(event) {
+	handleEmailChange(event) {
 		this.setState({
 			email: event.target.value,
 		});
@@ -61,18 +98,18 @@ class LoginForm extends React.Component {
 		});
 	}
 
-	
 
-		handlePasswordChange(event) {
-			this.setState({
-				password: event.target.value,
-	
-			});
-	
+
+	handlePasswordChange(event) {
+		this.setState({
+			password: event.target.value,
+
+		});
+
 	}
 	render() {
 		return (
-			
+			<div style={divStyle}>
 			<div className="main-agileinfo slider ">
 				<div className="items-group">
 					<div className="item agileits-w3layouts">
@@ -115,16 +152,17 @@ class LoginForm extends React.Component {
 											<br />
 											<input type="submit" value="Login" />
 										</form>
+										<Button bsStyle="danger"><Link to='/createres' class="active">Create Restaurant</Link></Button>
 									</div>
-									
+
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-	        </div>
-			
-		
+			</div>
+		</div>
+
 		);
 	}
 }

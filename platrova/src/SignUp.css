@@ -24,7 +24,7 @@ img{max-width:100%;}
 body {
     font-family: 'Arsenal', sans-serif; 
 	background:#fff; 
-	background: url(image.jpg)repeat 0px 0px;
+	/*background: url(image.jpg)repeat 0px 0px;*/
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
