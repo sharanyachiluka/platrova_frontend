@@ -1,0 +1,30 @@
+.position {
+    background-repeat: no-repeat;
+}
+.glyphicon-search{
+    font-size: 20px;
+   }
+   .pull-right{
+       float:right;
+   }
+     .form-control{
+    padding: 5px;
+    font-size: 20px;
+   }
+   .btn-btn-block{
+       display:flex;
+       -webkit-box-pack: center;
+       justify-content: center;
+   }
+   .centered {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.mytexts {
+    font-family:cursive ;
+    font-style: inherit;
+    color: rgb(255, 255, 255);
+    font-size: 1in;
+}
