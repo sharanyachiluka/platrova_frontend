@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Gmaps, Marker, InfoWindow, Circle} from 'react-gmaps';
 import './ClientHomepage.css';
+import ClientReg from './ClientReg';
 
 let coords = {
     lat: 17.3850,
@@ -16,7 +17,7 @@ var divstyle={
     fontSize:20,
     fontColor:'white',
 }
-class ClientHomepage extends React.Component {
+class ClientMap extends React.Component {
     onMapCreated(map) {
         map.setOptions({
           disableDefaultUI: true
@@ -26,11 +27,12 @@ class ClientHomepage extends React.Component {
       onDragEnd(e) {
         console.log('onDragEnd'+' hii '+e.latLng.lat(), e);
         //coords=e.latLng;
-        coords.lat=e.latLng.lat();
-        coords.lng=e.latLng.lng();
+               coords.lat=e.latLng.lat();
+       coords.lng=e.latLng.lng();
+        return <ClientReg lat={coords.lat} lng={coords.lng} />
        // console.log('after cords change '+coords.lat+' longii'+coords.lng);
-       document.getElementById('latitude').value = e.latLng.lat()
-                 document.getElementById('longitude').value =  e.latLng.lng()
+       //document.getElementById('latitude').value = e.latLng.lat()
+         //        document.getElementById('longitude').value =  e.latLng.lng()
        
       }
      
@@ -49,16 +51,7 @@ class ClientHomepage extends React.Component {
                 return (
                    
                            <table>
-                                <div className="right">
-                                    <tr>
-                                    <td>LATITUDE</td>
-                                    <td><input type="text" name="Country"  id= "latitude" value=""  readonly="readonly"/></td>
-                                    </tr>
-                                    <tr>
-                                    <td>LONGITUDE</td>
-                                    <td><input type="text" name="Country"  id= "longitude" value=""  readonly="readonly"/></td>
-                                    </tr>
-                                 </div>
+                                
                                 <br />
                                 <div className="left">
                                     <tr>
@@ -84,12 +77,7 @@ class ClientHomepage extends React.Component {
                                             onCloseClick={this.onCloseClick} />
                                          </Gmaps></td>
                                     </tr>
-                                    <tr>
-                                        <br/>
-                                        <br/>
-                                    
-                                    <td><button className="btn btn-primary" > <i class="glyphicon glyphicon-ok"></i>Submit</button></td>
-                                    </tr>
+                                   
                                  </div>
                       </table>
             
@@ -99,4 +87,4 @@ class ClientHomepage extends React.Component {
             }
 }
 
-export default ClientHomepage; 
+export default ClientMap; 
