@@ -6,7 +6,9 @@ import App from './App';
 import Header from './Header';
 import Footer from './Footer';
 import { BrowserRouter,Route,Switch} from 'react-router-dom';
-import ClientHomepage from './ClientHomepage';
+//import ClientHomepage from './ClientHomepage';
+import Client from './Client';
+
 
 class Routes extends React.Component {
     render() {
@@ -17,7 +19,7 @@ class Routes extends React.Component {
             <Route  path="/"  exact component={Home} />
             <Route  path="/signup"  exact component={SignUp} />
             <Route  path="/login"    exact component={LoginForm} />
-            <Route path="/createres" exact component={ClientHomepage} />
+            <Route path="/createres" exact component={Client} />
             <Footer />
             </div>
             

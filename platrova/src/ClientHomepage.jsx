@@ -71,31 +71,31 @@ class ClientHomepage extends React.Component {
                                     <br />
                                     <tr>
                                         <td>RESTAURANT NAME</td>
-                                        <td><input type="text" name="name" id="name"  style={textstyle} /></td>
+                                        <td><input type="text" name="name" id="name" value="" style={textstyle} /></td>
                                     </tr> <br/>
                                     <tr>
                                         <td>RESTAURANT TYPE</td>
-                                        <td><input type="text" name="type" id="type" value="" readonly="readonly" style={textstyle} /></td>
+                                        <td><input type="text" name="type" id="type" value="" style={textstyle} /></td>
                                     </tr> <br/>
                                     <tr>
                                         <td>ADDRESS</td>
-                                        <td><input type="text" name="address" id="address" value="" readonly="readonly" style={textstyle} /></td>
+                                        <td><input type="text" name="address" id="address" value=""  style={textstyle} /></td>
                                     </tr> <br/>
                                     <tr>
                                         <td>CONTACT</td>
-                                        <td><input type="text" name="contact" id="contact" value="" readonly="readonly" style={textstyle} /></td>
+                                        <td><input type="text" name="contact" id="contact" value=""  style={textstyle} /></td>
                                     </tr> <br/>
                                     <tr>
                                         <td>HOMEPAGE URL</td>
-                                        <td><input type="text" name="hpUrl" id="hpUrl" value="" readonly="readonly" style={textstyle} /></td>
+                                        <td><input type="text" name="hpUrl" id="hpUrl" value=""  style={textstyle} /></td>
                                     </tr> <br/>
                                     <tr>
                                         <td>FACEBOOK URL</td>
-                                        <td><input type="text" name="fbUrl" id="fbUrl" value="" readonly="readonly" style={textstyle} /></td>
+                                        <td><input type="text" name="fbUrl" id="fbUrl" value=""  style={textstyle} /></td>
                                     </tr> <br/>
                                     <tr>
                                         <td>COST</td>
-                                        <td><input type="text" name="cost" id="cost" value="" readonly="readonly" style={textstyle} /></td>
+                                        <td><input type="text" name="cost" id="cost" value=""  style={textstyle} /></td>
                                     </tr> <br/>
                                     <tr>
                                         <td>LATITUDE</td>
