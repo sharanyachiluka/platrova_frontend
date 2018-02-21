@@ -1,6 +1,12 @@
-.left {
-    float: left;
+.column {
+    margin-top: 50px;
+    
+    /* Should be removed. Only for demonstration */
 }
-.right {
-    float : right;
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
