@@ -12,22 +12,16 @@ let coords = {
 
 
 const params = { v: '3.exp', key: 'AIzaSyC9tvO2YPEmjQcNKGWyrV37vYRU7hdKlbM' };
-/*var divStyle = {
+var bg = {
     width: "100%",
     height: "1140px",
-    backgroundImage: `url(${client})`,
+    backgroundImage: `url(${bann})`,
     backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    color: 'white',
-    fontFamily: 'Cursive',
-    
-};*/
-var form = {
-    border: '2px solid white',
-    fontFamily: 'Arial',
+    backgroundSize:'cover',
+    overflow:'hidden',
 }
 var textstyle = {
-    color: 'black',
+    color: 'white',
 };
 class Client extends React.Component {
     constructor(props) {
@@ -35,14 +29,25 @@ class Client extends React.Component {
 
         this.state = {
             name: "",
-            email: "",
+            type: "",
+            address: "",
+            contact: "",
+            hpUrl: "",
+            fbUrl: "",
+            cost: "", 
+            lat: "",
+            lng: "",
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleNameChange = this.handleNameChange.bind(this);
-        this.handleEmailChange = this.handleEmailChange.bind(this);
+        this.handleTypeChange = this.handleTypeChange.bind(this);
+        this.handleAddressChange = this.handleAddressChange.bind(this);
+        this.handleContactChange = this.handleContactChange.bind(this);
+        this.handlehpUrlChange = this.handlehpUrlChange.bind(this);
+        this.handlefbUrlChange = this.handlefbUrlChange.bind(this);
+        this.handleCostChange = this.handleCostChange.bind(this);
     }
-
     handleSubmit(event) {
 
         event.preventDefault();
@@ -50,7 +55,7 @@ class Client extends React.Component {
         this.setState({ value: event.target.value});
 
         var name = document.getElementById('name').value;
-		var email = document.getElementById('email').value;
+        var email = document.getElementById('email').value;
         
        /* request
             .post("http://localhost/clients")
@@ -61,38 +66,61 @@ class Client extends React.Component {
                 }
             );*/
        }
-
+    
 
        handleNameChange(event) {
-		this.setState({
-			name: event.target.value,
-		});
-		var name = document.getElementById("name");
-		name.addEventListener("input", function (event) {
+        this.setState({
+            name: event.target.value,
+        });
+        var name = document.getElementById("name");
+        name.addEventListener("input", function (event) {
 
-			if (name.validity.patternMismatch) {
-				name.setCustomValidity("Username must contain only alphabets and numbers!");
-			}
-			else {
-				name.setCustomValidity("");
-			}
-		});
+            if (name.validity.patternMismatch) {
+                name.setCustomValidity("Restaurant must contain only alphabets and numbers!");
+            }
+            else {
+                name.setCustomValidity("");
+            }
+        });
 
-	}
-
-	handleEmailChange(event) {
-		this.setState({
-			email: event.target.value,
-		});
-		var email = document.getElementById("email");
-		email.addEventListener("input", function (event) {
-			if (email.validity.typeMismatch) {
-				email.setCustomValidity("I expect an e-mail, darling!");
-			} else {
-				email.setCustomValidity("");
-			}
-		});
+    }
+    
+    handleTypeChange(event) {
+        this.setState({
+            type: event.target.value,
+        });
     }
+     
+    handleAddressChange(event) {
+        this.setState({
+            address: event.target.value,
+        });
+    }
+
+    handleContactChange(event) {
+        this.setState({
+            contact : event.target.value,
+        });
+    }
+
+    handlehpUrlChange(event) {
+        this.setState({
+            hpUrl : event.target.value,
+        });
+    }
+    
+    handlefbUrlChange(event) {
+        this.setState({
+            fbUrl : event.target.value,
+        });
+    }
+    
+    handleCostChange(event) {
+        this.setState({
+            cost : event.target.value,
+        });
+    }
+    
     
     onMapCreated(map) {
         map.setOptions({
@@ -126,45 +154,111 @@ class Client extends React.Component {
     render() {
         return (
             <body>
-                <h1>cccc</h1>
-                <div className="col-md-12">
+               <div style={bg}>
+                <div className="col-md-3">
                     <div class="float-lt" >
 
-                        <div class="login-w3l">	
+                        <div class="login-w3l"> 
                            
-			                    <div class="top-img-agileits-w3layouts">
-				                    <h2 class="sub-head-w3-agileits">Contact Us</h2>
-				                        <p>Fillout the form below to learn more!</p>
-				                            <div class="login-form-c">	
-				                                 <form autoComplete="off" onSubmit={this.handleSubmit}>
+                                <div class="top-img-agileits-w3layouts">
+                                    <h2 class="sub-head-w3-agileits">Platrova</h2>
+                                        <p>Create Accounts..Make Profits..</p>
+                                            <div class="login-form-c">  
+                                                 <form autoComplete="off" onSubmit={this.handleSubmit}>
                                                     <input type="text" 
-                                                    className="name" 
                                                     id="name" 
                                                     placeholder="Restaurant Name" 
                                                     onChange={this.handleNameChange}
                                                     value={this.state.name}
                                                     required/>
-
-                                                    <input type="email" 
-                                                    className="Email"
-                                                    id="email" 
-                                                    autoFocus
-                                                    placeholder="Email" 
-                                                    onChange={this.handleEmailChange}
-                                                    value={this.state.email}
+                                                    <div style={textstyle} onTypeChange={this.handleTypeChange}>
+                                                    Restaurant type:
+                                                    <br />
+                                                        <input type="checkbox" 
+                                                        id="type" 
+                                                        name="type"
+                                                        autoFocus
+                                                        value="North-Indian" 
+                                                        style={textstyle}
+                                                        />&nbsp;&nbsp;North Indian
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                                        <input type="checkbox" 
+                                                        id="type" 
+                                                        name="type"
+                                                        autoFocus
+                                                        value="South-Indian" 
+                                                        style={textstyle}
+                                                        />&nbsp;&nbsp;South-Indian
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                                        <input type="checkbox" 
+                                                        id="type" 
+                                                        name="type"
+                                                        autoFocus
+                                                        value="Italian" 
+                                                        style={textstyle}
+                                                        />&nbsp;&nbsp;Italian
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                                        <input type="checkbox" 
+                                                        id="type" 
+                                                        name="type"
+                                                        autoFocus
+                                                        value="Chinese" 
+                                                        style={textstyle}
+                                                        />&nbsp;&nbsp;Chinese
+                                                    </div><br />
+                                                    <input type="text" 
+                                                    id="address" 
+                                                    placeholder="Restaurant Address" 
+                                                    onChange={this.handleAddressChange}
+                                                    value={this.state.address}
                                                     required/>
-                                                    
+                                                    <input type="text" 
+                                                    id="contact" 
+                                                    placeholder="Contact" 
+                                                    onChange={this.handleContactChange}
+                                                    value={this.state.contact}
+                                                    required/>
+                                                    <input type="text" 
+                                                    id="hpUrl" 
+                                                    placeholder="Homepage Url" 
+                                                    onChange={this.handlehpUrlChange}
+                                                    value={this.state.hpUrl}
+                                                    required/>
+                                                    <input type="text" 
+                                                    id="fbUrl" 
+                                                    placeholder="Facebook Url" 
+                                                    onChange={this.handlefbUrlChange}
+                                                    value={this.state.fbUrl}
+                                                    required/>
+                                                    <input type="text" 
+                                                    id="cost" 
+                                                    placeholder="Cost per person" 
+                                                    onChange={this.handleCostChange}
+                                                    value={this.state.cost}
+                                                    required/>
+                                                    <input type="text" 
+                                                     name="Country" 
+                                                     placeholder="latitude"
+                                                     id="latitude" 
+                                                     value="" 
+                                                     readonly="readonly"/>
+                                                     <input type="text" 
+                                                     name="Country"
+                                                     placeholder="longitude" 
+                                                     id="longitude" 
+                                                     value="" 
+                                                     readonly="readonly"/>
                                                     <input type="submit" value="Send"/>
                                                 </form>
-                                            </div>		
-		                                </div>
+                                            </div>      
+                                        </div>
                                     </div> 
                                 </div>
                             </div>
-			        	
+                        
 
                   
-                            <div className="col-lg-12 col-lg-push-6">
+                            <div className="col-lg-2 col-lg-push-7">
                             <div class = "float-rt">
                             <Gmaps
                                 width={'1000px'}
@@ -191,8 +285,9 @@ class Client extends React.Component {
                   
                 </div>
                     <div class="clear"></div>
-			            <div class="footer-agileits">
-			            </div>
+                        <div class="footer-agileits">
+                        </div>
+                        </div>
                 </body>
 
         );

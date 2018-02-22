@@ -5,6 +5,8 @@ import Search from './Search';
 import image from './image.jpg';
 import request from 'superagent';
 import LoginForm from './LoginForm';
+import Header from './Header';
+import Footer from './Footer';
 
 var divStyle = {
 	width: "100%",
@@ -109,7 +111,7 @@ class SignUp extends React.Component {
 
 	render() {
 		return (
-			<div style={divStyle}>
+		<div style={divStyle}>
 			<div className="main-agileinfo slider ">
 				<div className="items-group">
 					<div className="item agileits-w3layouts">
@@ -172,7 +174,7 @@ class SignUp extends React.Component {
 					</div>
 				</div>
 			</div>
-			</div>
+		</div>
 		
 		);
 	}

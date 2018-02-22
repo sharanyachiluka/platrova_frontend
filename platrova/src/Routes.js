@@ -15,12 +15,16 @@ class Routes extends React.Component {
         return(
             
             <div>
-             <Header />
+                 <Header/>
             <Route  path="/"  exact component={Home} />
+           
             <Route  path="/signup"  exact component={SignUp} />
             <Route  path="/login"    exact component={LoginForm} />
+
             <Route path="/createres" exact component={Client} />
-            <Footer />
+            <Footer/>
+            
+         
             </div>
             
             
