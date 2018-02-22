@@ -54,7 +54,7 @@ class LoginForm extends React.Component {
         //accesstoken=window.localStorage.getItem('result1.access_token');
         //expirytime=window.localStorage.getItem('response.expiry_time');
         //refreshtoken=window.localStorage.getItem('response.refresh_token');
-        
+        window.location.href="/myhome";
         console.log(result1);
 		accessToken = result1.access_token;
 		role=result1.role;

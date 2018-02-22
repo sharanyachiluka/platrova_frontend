@@ -56,7 +56,7 @@ class SignUp extends React.Component {
 					// I kept the data as object with "place" as the key, and [lat,longs] as value.
 					// following code converts array of objects into the format which my component is accepting.
 					console.log("response is ok");
-					
+					window.location.href="/login";
 				});
 		}
 		else {

@@ -8,13 +8,14 @@ import Footer from './Footer';
 import { BrowserRouter,Route,Switch} from 'react-router-dom';
 //import ClientHomepage from './ClientHomepage';
 import Client from './Client';
+import MyHome from './MyHome';
 
 
 class Routes extends React.Component {
     render() {
         return(
             
-            <div>
+            <div><div>
                  <Header/>
             <Route  path="/"  exact component={Home} />
            
@@ -23,7 +24,9 @@ class Routes extends React.Component {
 
             <Route path="/createres" exact component={Client} />
             <Footer/>
+            </div>
             
+            <Route path="/myhome" exact component={MyHome} />
          
             </div>
             
