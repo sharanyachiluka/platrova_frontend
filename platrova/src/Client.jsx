@@ -127,9 +127,11 @@ class Client extends React.Component {
         return (
             <body>
                 <h1>cccc</h1>
+                <div className="col-sm-8">
                     <div class="float-lt" >
+
                         <div class="login-w3l">	
-                            <div className="col-md-8">
+                           
 			                    <div class="top-img-agileits-w3layouts">
 				                    <h2 class="sub-head-w3-agileits">Contact Us</h2>
 				                        <p>Fillout the form below to learn more!</p>
@@ -159,14 +161,14 @@ class Client extends React.Component {
                                     </div> 
                                 </div>
                             </div>
-			        	<div class="clear"></div>
-			            <div class="footer-agileits">
-			            </div>
+			        	
 
-                        <div className="col-md-9">
+                  
+                            <div className="col-lg-11 col-lg-push-6">
+                            <div class = "float-rt">
                             <Gmaps
-                                width={'970px'}
-                                height={'860px'}
+                                width={'1000px'}
+                                height={'800px'}
                                 lat={coords.lat}
                                 lng={coords.lng}
                                 zoom={12}
@@ -185,7 +187,12 @@ class Client extends React.Component {
                                     content={'Hello, Move me to the Restaurant  :)'}
                                     onCloseClick={this.onCloseClick} />
                             </Gmaps>
-                    </div>
+                            </div>
+                  
+                </div>
+                    <div class="clear"></div>
+			            <div class="footer-agileits">
+			            </div>
                 </body>
 
         );

@@ -54,9 +54,10 @@ h1,h2,h3,h4,h5,h6{
 	padding: 30px 25px;
 
 }
-.col-md-10{
+.maps{
 
-	float: left;
+	margin-bottom: 5px;
+
 }
 /**** LOGIN_SIGNUP ******/
 /* signup Form styles */
