@@ -127,7 +127,7 @@ class Client extends React.Component {
         return (
             <body>
                 <h1>cccc</h1>
-                <div className="col-sm-8">
+                <div className="col-sm-9">
                     <div class="float-lt" >
 
                         <div class="login-w3l">	
