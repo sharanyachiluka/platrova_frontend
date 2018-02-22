@@ -80,7 +80,7 @@ h2.sub-head-w3-agileits {
     padding-top: 15px;
     text-align: center;
 }
-.login-form {
+.login-form-c {
     padding: 2em;
 }
 .login-w3l {
@@ -93,7 +93,7 @@ h2.sub-head-w3-agileits {
    -moz-box-shadow: 10px 10px 16px 0px rgba(255, 255, 255, 0.1);
     box-shadow: 10px 10px 16px 0px rgba(255, 255, 255, 0.1);*/
 }
-.login-form input[type="text"], .login-form textarea, .login-form input[type="email"] {
+.login-form-c input[type="text"], .login-form-c textarea, .login-form-c input[type="email"] {
     width: 100%;
     padding: 10px 20px;
     border: none;
@@ -118,11 +118,11 @@ h1 {
     color: #fff;
     margin: 2em 0 1.5em;
 }
-.login-form textarea{
+.login-form-c textarea{
 	resize:none;
 	height:100px;
 }
-.login-form input[type="submit"] {
+.login-form-c input[type="submit"] {
     background: #b32eb5;
     color: #fff;
     font-size: 18px;
@@ -144,10 +144,10 @@ h1 {
     -o-transition: 0.5s all;
     font-family: 'Montserrat', sans-serif;
 }
-.login-form input[type="submit"]:hover {
+.login-form-c input[type="submit"]:hover {
 	    background:transparent;
 }
-.book-form input[type="text"],.book-form input[type="email"],.book-form input[type="password"]{
+.book-form-c input[type="text"],.book-form-c input[type="email"],.book-form-c input[type="password"]{
 	width: 100%;
     padding: 10px 15px;
     border: none;
@@ -170,7 +170,8 @@ h1 {
     color: #fff;
     font-size: 14px;
     margin: 3.5em 0;
-    letter-spacing: 1.5px;
+	letter-spacing: 1.5px;
+	
     display: block;
 }
 .footer-agileits p a:hover {
@@ -221,7 +222,7 @@ h1 {
 	.top-img-agileits-w3layouts p {
 		font-size: 12px;
 	}
-	.login-form input[type="submit"] {
+	.login-form-c input[type="submit"] {
 		font-size: 16px;
 		padding: 11px 0;
 		margin-top: 10px;
@@ -268,17 +269,17 @@ h1 {
 	}
 }
 @media(max-width:800px){
-	.login-form {
+	.login-form-c {
 		padding: 1.6em 0;
 	}
-	.login-form input[type="text"], .login-form textarea, .login-form input[type="email"] {
+	.login-form-c input[type="text"], .login-form-c textarea, .login-form-c input[type="email"] {
 		font-size: 12px;
 		margin-bottom: 12px;
 	}
 	.login-w3l {
 		width: 60%;
 	}
-	.login-form input[type="submit"] {
+	.login-form-c input[type="submit"] {
 		font-size: 15px;
 		padding: 10px 0;
 		margin-top: 8px;
@@ -319,7 +320,7 @@ h1 {
 	.top-img-agileits-w3layouts {
 		padding: 20px 25px;
 	}
-	.login-form input[type="submit"] {
+	.login-form-c input[type="submit"] {
 		font-size: 14px;
 		padding: 8px 0;
 	}
@@ -389,7 +390,7 @@ h1 {
 	.footer-agileits p {
     margin: 1.8em 0.5em 1.8em;
 }
-	.login-form input[type="submit"] {
+	.login-form-c input[type="submit"] {
 		margin-top: 4px;
 	}
 }

@@ -127,7 +127,7 @@ class Client extends React.Component {
         return (
             <body>
                 <h1>cccc</h1>
-                <div className="col-sm-9">
+                <div className="col-md-12">
                     <div class="float-lt" >
 
                         <div class="login-w3l">	
@@ -135,7 +135,7 @@ class Client extends React.Component {
 			                    <div class="top-img-agileits-w3layouts">
 				                    <h2 class="sub-head-w3-agileits">Contact Us</h2>
 				                        <p>Fillout the form below to learn more!</p>
-				                            <div class="login-form">	
+				                            <div class="login-form-c">	
 				                                 <form autoComplete="off" onSubmit={this.handleSubmit}>
                                                     <input type="text" 
                                                     className="name" 
@@ -164,7 +164,7 @@ class Client extends React.Component {
 			        	
 
                   
-                            <div className="col-lg-11 col-lg-push-6">
+                            <div className="col-lg-12 col-lg-push-6">
                             <div class = "float-rt">
                             <Gmaps
                                 width={'1000px'}
