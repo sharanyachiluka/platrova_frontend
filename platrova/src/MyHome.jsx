@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter,Route,Switch} from 'react-router-dom';
-import Home from './Home';
+import Search from './Search';
+import HoverEffect from './HoverEffect';
 import HeaderAfterLog from './HeaderAfterLog';
 import Footer from './Footer';
 
@@ -11,8 +12,10 @@ class MyHome extends React.Component{
             return(
                 <div>
                     <HeaderAfterLog/>
-                    <Home/>
-                <Footer/>
+                   <Search/>
+             <HoverEffect />
+                
+                
                 </div>
 
             );

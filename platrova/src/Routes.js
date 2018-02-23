@@ -9,27 +9,35 @@ import { BrowserRouter,Route,Switch} from 'react-router-dom';
 //import ClientHomepage from './ClientHomepage';
 import Client from './Client';
 import MyHome from './MyHome';
+import HeaderAfterLog from './HeaderAfterLog';
+import AppLoginForm from './AppLoginForm';
+import AppSignUpForm from './AppSignUpForm';
 
 
 class Routes extends React.Component {
     render() {
         return(
             
-            <div><div>
-                 <Header/>
-            <Route  path="/"  exact component={Home} />
+         <div>
+                
+                    
+           <div>  
            
-            <Route  path="/signup"  exact component={SignUp} />
-            <Route  path="/login"    exact component={LoginForm} />
+                <Route  path="/"  exact component={Home} />
+            
+                <Route  path="/signup"  exact component={AppSignUpForm} />
+                <Route  path="/login"    exact component={AppLoginForm} />
 
-            <Route path="/createres" exact component={Client} />
-            <Footer/>
-            </div>
+                <Route path="/createres" exact component={Client} />
+          
+          </div>
             
-            <Route path="/myhome" exact component={MyHome} />
          
-            </div>
-            
+            <Route path="/myhome" exact component={MyHome} />
+            <Footer/>
+           
+           
+         </div>   
             
         );
     }
