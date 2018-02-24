@@ -6,12 +6,13 @@ import App from './App';
 import Header from './Header';
 import Footer from './Footer';
 import { BrowserRouter,Route,Switch} from 'react-router-dom';
-//import ClientHomepage from './ClientHomepage';
+//import UserProfile from './ClientHomepage';
 import Client from './Client';
 import MyHome from './MyHome';
 import HeaderAfterLog from './HeaderAfterLog';
 import AppLoginForm from './AppLoginForm';
 import AppSignUpForm from './AppSignUpForm';
+import UserProfile from './UserProfile';
 
 
 class Routes extends React.Component {
@@ -29,7 +30,7 @@ class Routes extends React.Component {
                 <Route  path="/login"    exact component={AppLoginForm} />
 
                 <Route path="/createres" exact component={Client} />
-          
+                <Route path="/myprofile" exact component={UserProfile}/>
           </div>
             
          
