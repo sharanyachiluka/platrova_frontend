@@ -47,6 +47,8 @@ class Client extends React.Component {
         this.handlehpUrlChange = this.handlehpUrlChange.bind(this);
         this.handlefbUrlChange = this.handlefbUrlChange.bind(this);
         this.handleCostChange = this.handleCostChange.bind(this);
+        
+        this.onDragEnd=this.onDragEnd.bind(this);
     }
     handleSubmit(event) {
 
@@ -66,7 +68,25 @@ class Client extends React.Component {
                 }
             );*/
        }
-    
+       onDragEnd(e) {
+        console.log('onDragEnd' + ' hii ' + e.latLng.lat(), e);
+        //coords=e.latLng;
+        coords.lat = e.latLng.lat();
+        coords.lng = e.latLng.lng();
+        this.setState({
+            lat:coords.lat,
+            lng:coords.lng,
+        })
+        console.log('after cords change '+coords.lat+' longii'+coords.lng);
+        document.getElementById('latitude').value = e.latLng.lat()
+        document.getElementById('longitude').value = e.latLng.lng()
+       console.log(coords.lat);
+        
+    }
+    /*onDragEnd = (e) => {
+        
+    }   */ 
+     
 
        handleNameChange(event) {
         this.setState({
@@ -121,24 +141,15 @@ class Client extends React.Component {
         });
     }
     
-    
+
     onMapCreated(map) {
         map.setOptions({
             disableDefaultUI: true
         });
     }
 
-    onDragEnd(e) {
-        console.log('onDragEnd' + ' hii ' + e.latLng.lat(), e);
-        //coords=e.latLng;
-        coords.lat = e.latLng.lat();
-        coords.lng = e.latLng.lng();
-        // console.log('after cords change '+coords.lat+' longii'+coords.lng);
-        document.getElementById('latitude').value = e.latLng.lat()
-        document.getElementById('longitude').value = e.latLng.lng()
-
-    }
-
+   
+  
     onCloseClick() {
 
         console.log('onCloseClick');
@@ -241,6 +252,7 @@ class Client extends React.Component {
                                                      placeholder="latitude"
                                                      id="latitude" 
                                                      value="" 
+                                                     
                                                      readonly="readonly"/>
                                                      <input type="text" 
                                                      name="Country"
@@ -274,7 +286,8 @@ class Client extends React.Component {
                                     lat={coords.lat}
                                     lng={coords.lng}
                                     draggable={true}
-                                    onDragEnd={this.onDragEnd} />
+                                    onDragEnd={this.onDragEnd}
+                                     />
                                 <InfoWindow
                                     lat={coords.lat}
                                     lng={coords.lng}

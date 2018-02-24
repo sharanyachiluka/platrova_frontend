@@ -61,9 +61,9 @@ class UserProfile extends React.Component {
             <div class="card">
                 <img src="image.jpg" style={divStyle}/>
             <div class="container">
-                <center><h3><b>User Name</b></h3></center>
-                <p>Email:sample@gmail.com</p>
-                <p>Likes:xxx,xxxx,xxxx</p>
+                <center><h3><b>User Name:{this.state.name}</b></h3></center>
+                <p>Email:{this.state.email}</p>
+                
                 <p><Button bsStyle="danger"><Link to='/editprofile' class="active">Edit Profile</Link></Button></p>
                 <p><Button bsStyle="danger"><Link to='/updatepassword' class="active">Update Password</Link></Button></p>
             </div>
