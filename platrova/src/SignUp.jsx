@@ -48,7 +48,7 @@ class SignUp extends React.Component {
 		if (password === confirmPassword) {
 
 			request
-				.post("http://10.10.200.22:9000/users")
+				.post("http://10.10.200.21:9000/users")
 				.send({ name: name, email: email, password: password})
 				.then(
 				(response) => {

@@ -54,18 +54,19 @@ class LoginForm extends React.Component {
         //accesstoken=window.localStorage.getItem('result1.access_token');
         //expirytime=window.localStorage.getItem('response.expiry_time');
         //refreshtoken=window.localStorage.getItem('response.refresh_token');
-        window.location.href="/myhome";
+       
         console.log(result1);
 		accesstoken = result1.access_token;
 		role=result1.role;
 		console.log(accesstoken);
 		console.log(role);
         localStorage.setItem("accesstoken",result1.access_token);
-        result1.access_token=localStorage.getItem("accesstoken");
-		module.exports={data:"accesstoken"};
+        //result1.access_token=localStorage.getItem("accesstoken");
+		//module.exports={data:"accesstoken"};
 		localStorage.setItem("role",role);
-        result1.role=localStorage.getItem("role");
-		module.exports={data:"role"};       
+       // result1.role=localStorage.getItem("role");
+//module.exports={data:"role"}; 
+		window.location.href="/myhome";      
     })
     .catch(function(error){
         console.log(error);
@@ -148,7 +149,9 @@ class LoginForm extends React.Component {
 											<br />
 											<input type="submit" value="Login" />
 										</form>
-										<Button bsStyle="danger"><Link to='/createres' class="active">Create Restaurant</Link></Button>
+										<div className="login-agileits-bottom wthree">
+										<h6><Link to='/forgotpassword' class="active"> Forgot Password?</Link></h6>
+									</div>
 									</div>
 
 								</div>

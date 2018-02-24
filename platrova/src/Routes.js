@@ -22,7 +22,7 @@ class Routes extends React.Component {
          <div>
                 
                     
-           <div>  
+            
            
                 <Route  path="/"  exact component={Home} />
             
@@ -30,9 +30,9 @@ class Routes extends React.Component {
                 <Route  path="/login"    exact component={AppLoginForm} />
 
                 <Route path="/createres" exact component={Client} />
-                
-          </div>
             
+          
+             
          
             <Route exact path="/myhome"  component={MyHome} />
             <Route path="/myprofile" exact component={UserProfile}/>

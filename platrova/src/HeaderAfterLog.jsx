@@ -19,7 +19,7 @@ class HeaderAfterLog extends React.Component {
                         <Nav pullRight>
                             <ButtonToolbar>
                                 <Button bsStyle="danger"><Link to='/myprofile' class="active">MyProfile</Link></Button>
-                                <Button bsStyle="danger"><Link to='/logout' class="active">Logout</Link></Button>
+                                <Button bsStyle="danger"><Link to='/' class="active">Logout</Link></Button>
                             </ButtonToolbar>
                         </Nav>
                     </Navbar.Form>

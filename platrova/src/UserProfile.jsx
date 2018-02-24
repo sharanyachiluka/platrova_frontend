@@ -15,10 +15,23 @@ var imageStyle = {
 var divStyle = {
     width: '100%',
 }
-var accesstoken = localStorage.getItem("accesstoken");
-console.log(accesstoken);
+var accesstoken=localStorage.getItem("accesstoken");
+ 
+class UserProfile extends React.Component {
+    constructor(props) {
+        super(props);
 
-fetch ( "http://10.10.200.22:9000/users/me" , 
+        this.state = {
+            name: "",
+            email : "",
+        };
+    }
+
+   
+
+    componentDidMount() {
+
+    fetch ( "http://10.10.200.22:9000/users/me" , 
         {
             method: "GET",     
             headers: {
@@ -29,14 +42,17 @@ fetch ( "http://10.10.200.22:9000/users/me" ,
               },       
           
     }).then(result1=>result1.json())
-    .then(function(result1){
-        console.log(result1);
+    .then((result1) => {
+        //console.log(result1);
+       this.setState ({
+         name:result1.userName,
+        email:result1.email,
+        });
     })
     .catch(function(error){
         console.log(error);
    });
-   
-class UserProfile extends React.Component {
+    }
     render() {
         return (
             <div>
