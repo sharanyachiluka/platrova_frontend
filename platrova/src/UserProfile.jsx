@@ -15,7 +15,27 @@ var imageStyle = {
 var divStyle = {
     width: '100%',
 }
+var accesstoken = localStorage.getItem("accesstoken");
+console.log(accesstoken);
 
+fetch ( "http://10.10.200.22:9000/users/me" , 
+        {
+            method: "GET",     
+            headers: {
+                "Content-Type": "application/json",
+                "Accept"    :   "application,json",
+                "Authorization" : 'Bearer'+ accesstoken,
+                
+              },       
+          
+    }).then(result1=>result1.json())
+    .then(function(result1){
+        console.log(result1);
+    })
+    .catch(function(error){
+        console.log(error);
+   });
+   
 class UserProfile extends React.Component {
     render() {
         return (

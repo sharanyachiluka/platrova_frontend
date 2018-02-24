@@ -37,7 +37,7 @@ class LoginForm extends React.Component {
 
 		var name = document.getElementById('name').value;
 		var password = document.getElementById('password').value;
-		var accessToken,refreshtoken,expirytime;
+		var accesstoken,refreshtoken,expirytime;
 		var role='user';
 		var form = JSON.stringify({name : name, password : password});
 		fetch ( "http://10.10.200.22:9000/users/login" , 
@@ -56,20 +56,16 @@ class LoginForm extends React.Component {
         //refreshtoken=window.localStorage.getItem('response.refresh_token');
         window.location.href="/myhome";
         console.log(result1);
-		accessToken = result1.access_token;
+		accesstoken = result1.access_token;
 		role=result1.role;
-		console.log(accessToken);
-		/*if(role === user) {
-			<h3>Login Successful</h3>
-		}
-		else {
-			<Button bsStyle="danger"><Link to='/createres' class="active">Create Restaurant</Link></Button>
-		}
-        localStorage.setItem("accessToken",result1.access_token);
-        result1.access_token=localStorage.getItem("accessToken");
-        module.exports={data:"accessToken"};*/
-
-        
+		console.log(accesstoken);
+		console.log(role);
+        localStorage.setItem("accesstoken",result1.access_token);
+        result1.access_token=localStorage.getItem("accesstoken");
+		module.exports={data:"accesstoken"};
+		localStorage.setItem("role",role);
+        result1.role=localStorage.getItem("role");
+		module.exports={data:"role"};       
     })
     .catch(function(error){
         console.log(error);

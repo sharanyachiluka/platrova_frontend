@@ -30,11 +30,12 @@ class Routes extends React.Component {
                 <Route  path="/login"    exact component={AppLoginForm} />
 
                 <Route path="/createres" exact component={Client} />
-                <Route path="/myprofile" exact component={UserProfile}/>
+                
           </div>
             
          
-            <Route path="/myhome" exact component={MyHome} />
+            <Route exact path="/myhome"  component={MyHome} />
+            <Route path="/myprofile" exact component={UserProfile}/>
             <Footer/>
            
            
