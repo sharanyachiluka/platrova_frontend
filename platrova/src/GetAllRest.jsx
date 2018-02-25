@@ -3,6 +3,7 @@ import image from './image.jpg';
 import './UserProfile.css';
 import { BrowserRouter, Router, Link } from 'react-router-dom';
 import { ButtonToolbar, Button } from 'react-bootstrap';
+import HeaderAfterLog from './HeaderAfterLog';
 
 var imageStyle = {
     width: "100%",
@@ -38,7 +39,7 @@ class GetAllRest extends React.Component {
 
     componentDidMount() {
 
-    fetch ( "http://10.10.200.22:9000/users/me" , 
+    fetch ( "http://10.10.200.22:9000/restaurant/owner" , 
         {
             method: "GET",     
             headers: {
@@ -50,7 +51,7 @@ class GetAllRest extends React.Component {
           
     }).then(result1=>result1.json())
     .then((result1) => {
-        //console.log(result1);
+        console.log(result1);
        this.setState ({
          name:result1.userName,
          type: result1.type,
@@ -70,7 +71,7 @@ class GetAllRest extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div><HeaderAfterLog/>
             <br /><br /><br />
             <div className="title"><center><h1>My Restaurants</h1></center></div>
             <div class="card">

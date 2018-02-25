@@ -60,7 +60,7 @@ class HeaderAfterLog extends React.Component {
                    
                     <Navbar.Form>
                         <Navbar.Brand>
-                            <Link to='/' class="white">PLATROVA</Link>
+                            <Link to='/myhome' class="white">PLATROVA</Link>
                         </Navbar.Brand>
                         <Nav pullRight>
                             <ButtonToolbar>

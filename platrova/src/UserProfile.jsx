@@ -3,6 +3,7 @@ import image from './image.jpg';
 import './UserProfile.css';
 import { BrowserRouter, Router, Link } from 'react-router-dom';
 import { ButtonToolbar, Button } from 'react-bootstrap';
+import HeaderAfterLog from './HeaderAfterLog';
 
 var imageStyle = {
     width: "100%",
@@ -56,6 +57,8 @@ class UserProfile extends React.Component {
     render() {
         return (
             <div>
+            <HeaderAfterLog/>
+            <div>
             <br /><br /><br />
             <div className="title"><center><h1>My Profile</h1></center></div>
             <div class="card">
@@ -68,7 +71,7 @@ class UserProfile extends React.Component {
                 <p><Button bsStyle="danger"><Link to='/updatepassword' class="active">Update Password</Link></Button></p>
             </div>
             </div>
-            </div>
+            </div></div>
         );
     }
 }

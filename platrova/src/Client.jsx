@@ -4,6 +4,7 @@ import { Gmaps, Marker, InfoWindow, Circle } from 'react-gmaps';
 import './Client.css';
 import request from 'superagent';
  import bann from './bann.jpg';
+ import HeaderAfterLog from './HeaderAfterLog';
 
 let coords = {
     lat: 17.3850,
@@ -23,6 +24,8 @@ var bg = {
 var textstyle = {
     color: 'white',
 };
+
+var accesstoken=localStorage.getItem("accesstoken");
 class Client extends React.Component {
     constructor(props) {
         super(props);
@@ -61,12 +64,13 @@ class Client extends React.Component {
         var hpUrl = document.getElementById('hpUrl').value;
         var fbUrl = document.getElementById('fbUrl').value;
         var cost = document.getElementById('cost').value;
-        var lat = document.getElementById('lat').value;
-        var lng = document.getElementById('lng').value;
-        var accesstoken,refreshtoken,expirytime;
+        var lat = document.getElementById('latitude').value;
+        var lng = document.getElementById('longitude').value;
+        var refreshtoken,expirytime;
+        var accesstoken=localStorage.getItem("accesstoken");
         var role='user';
         var form = JSON.stringify({name : name, address : address, contact : contact, hpUrl : hpUrl, fbUrl : fbUrl, cost : cost, lat : lat, lng : lng});
-        fetch ( "http://10.10.200.22:9000/users/login" , 
+        fetch ( "http://10.10.200.22:9000/new/restaurant" , 
         {
             method: "POST",     
             headers: {
@@ -75,22 +79,26 @@ class Client extends React.Component {
                 "Authorization" : 'Bearer'+ accesstoken,
               },       
             body: form, 
-    }).then(result1=>result1.json())
+    }).then(result1 => result1.json())
     .then(function(result1){
         console.log(result1);
-        //accesstoken = result1.access_token;
+        /*accesstoken = result1.access_token;
         //role=result1.role;
         //console.log(accesstoken);
         //console.log(role);
         localStorage.setItem("accesstoken",result1.access_token);
-        localStorage.setItem("role",role);
-        if(result1.status===200) {
+        localStorage.setItem("role",role);*/
+        if(result1.name === name) {
             window.alert("Restaurant created successfully");
         }
         else {
-            window.alert(result1.status);
+            window.alert("Please enter proper details");
         }
+        
        })
+       .catch(function(error){
+           console.log(error);
+       });
     }
 
        onDragEnd(e) {
@@ -227,6 +235,8 @@ var cost = document.getElementById("cost");
 
     render() {
         return (
+            <div>
+            <HeaderAfterLog/><br />
             <body>
                <div style={bg}>
                 <div className="col-md-3">
@@ -369,7 +379,7 @@ var cost = document.getElementById("cost");
                         </div>
                         </div>
                 </body>
-
+</div>
         );
     }
 }

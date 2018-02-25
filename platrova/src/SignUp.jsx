@@ -48,7 +48,7 @@ class SignUp extends React.Component {
 		if (password === confirmPassword) {
 
 			request
-				.post("http://10.10.200.21:9000/users")
+				.post("http://10.10.200.22:9000/users")
 				.send({ name: name, email: email, password: password})
 				.then(
 				(response) => {
@@ -56,12 +56,13 @@ class SignUp extends React.Component {
 					// I kept the data as object with "place" as the key, and [lat,longs] as value.
 					// following code converts array of objects into the format which my component is accepting.
 					console.log("response is ok");
+					window.alert("Account created sucessfully");
 					window.location.href="/login";
 				});
 		}
 		else {
 			//	console.log("nope");
-			alert("Password and confirm password are not matching");
+          window.alert("Password and confirm password are not matching");
 		}
 
 	}
