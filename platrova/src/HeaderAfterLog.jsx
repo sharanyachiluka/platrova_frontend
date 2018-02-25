@@ -5,6 +5,52 @@ import { ButtonToolbar, Button, Nav, Navbar, NavItem, FormGroup } from 'react-bo
 
 
 class HeaderAfterLog extends React.Component {
+
+    constructor(props) {
+		super(props);
+
+        this.handleUserChange = this.handleUserChange.bind(this);
+	}
+
+
+
+    handleUserChange(event){
+
+        event.preventDefault();
+        var accesstoken=localStorage.getItem("accesstoken");
+        var refreshtoken,expirytime;
+		var role;
+		fetch ( "http://10.10.200.22:9000/users/me" , 
+        {
+            method: "GET",     
+            headers: {
+                "Content-Type": "application/json",
+                "Accept"    :   "application,json",
+                "Authorization" : 'Bearer'+ accesstoken,
+              },       
+           
+    }).then(result1=>result1.json())
+    .then(function(result1){
+        //accesstoken=window.localStorage.getItem('result1.access_token');
+        //expirytime=window.localStorage.getItem('response.expiry_time');
+        //refreshtoken=window.localStorage.getItem('response.refresh_token');
+       
+		role=result1.role;
+		
+		console.log(role);
+        if(role==="User"){
+        window.location.href="/userprofile";   }
+        else{
+            window.location.href ="/clientprofile";
+        }
+           
+    })
+    .catch(function(error){
+        console.log(error);
+    });
+    }
+
+
     render() {
         return (
             
@@ -18,7 +64,7 @@ class HeaderAfterLog extends React.Component {
                         </Navbar.Brand>
                         <Nav pullRight>
                             <ButtonToolbar>
-                                <Button bsStyle="danger"><Link to='/myprofile' class="active">MyProfile</Link></Button>
+                                <Button bsStyle="danger" onClick={this.handleUserChange}><Link to='/myprofile' class="active">MyProfile</Link></Button>
                                 <Button bsStyle="danger"><Link to='/' class="active">Logout</Link></Button>
                             </ButtonToolbar>
                         </Nav>
@@ -26,8 +72,7 @@ class HeaderAfterLog extends React.Component {
               
                 </div>
             </div>
-            
-
+        
         );
     }
 }

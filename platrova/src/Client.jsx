@@ -47,7 +47,6 @@ class Client extends React.Component {
         this.handlehpUrlChange = this.handlehpUrlChange.bind(this);
         this.handlefbUrlChange = this.handlefbUrlChange.bind(this);
         this.handleCostChange = this.handleCostChange.bind(this);
-        
         this.onDragEnd=this.onDragEnd.bind(this);
     }
     handleSubmit(event) {
@@ -57,17 +56,43 @@ class Client extends React.Component {
         this.setState({ value: event.target.value});
 
         var name = document.getElementById('name').value;
-        var email = document.getElementById('email').value;
-        
-       /* request
-            .post("http://localhost/clients")
-            .send({ name: name, email:email})
-            .then(
-                (response) => {
-                    console.log("ok");
-                }
-            );*/
-       }
+        var address= document.getElementById('address').value;
+        var contact = document.getElementById('contact').value;
+        var hpUrl = document.getElementById('hpUrl').value;
+        var fbUrl = document.getElementById('fbUrl').value;
+        var cost = document.getElementById('cost').value;
+        var lat = document.getElementById('lat').value;
+        var lng = document.getElementById('lng').value;
+        var accesstoken,refreshtoken,expirytime;
+        var role='user';
+        var form = JSON.stringify({name : name, address : address, contact : contact, hpUrl : hpUrl, fbUrl : fbUrl, cost : cost, lat : lat, lng : lng});
+        fetch ( "http://10.10.200.22:9000/users/login" , 
+        {
+            method: "POST",     
+            headers: {
+                "Content-Type": "application/json",
+                "Accept"    :   "application,json",
+                "Authorization" : 'Bearer'+ accesstoken,
+              },       
+            body: form, 
+    }).then(result1=>result1.json())
+    .then(function(result1){
+        console.log(result1);
+        //accesstoken = result1.access_token;
+        //role=result1.role;
+        //console.log(accesstoken);
+        //console.log(role);
+        localStorage.setItem("accesstoken",result1.access_token);
+        localStorage.setItem("role",role);
+        if(result1.status===200) {
+            window.alert("Restaurant created successfully");
+        }
+        else {
+            window.alert(result1.status);
+        }
+       })
+    }
+
        onDragEnd(e) {
         console.log('onDragEnd' + ' hii ' + e.latLng.lat(), e);
         //coords=e.latLng;
@@ -83,9 +108,7 @@ class Client extends React.Component {
        console.log(coords.lat);
         
     }
-    /*onDragEnd = (e) => {
-        
-    }   */ 
+    
      
 
        handleNameChange(event) {
@@ -121,24 +144,64 @@ class Client extends React.Component {
         this.setState({
             contact : event.target.value,
         });
+    var contact = document.getElementById("contact");
+    contact.addEventListener("input", function (event) {
+
+        if (contact.validity.patternMismatch) {
+         contact.setCustomValidity("Contact number must contain 10 digits");
+        }
+        else {
+            contact.setCustomValidity("");
+        }
+    });
     }
 
     handlehpUrlChange(event) {
         this.setState({
             hpUrl : event.target.value,
         });
+var hpUrl = document.getElementById("hpUrl");
+    hpUrl.addEventListener("input", function (event) {
+
+        if (hpUrl.validity.patternMismatch) {
+         hpUrl.setCustomValidity("url should be of format https?://.+");
+        }
+        else {
+            hpUrl.setCustomValidity("");
+        }
+    });
     }
     
     handlefbUrlChange(event) {
         this.setState({
             fbUrl : event.target.value,
         });
+var fbUrl = document.getElementById("fbUrl");
+    fbUrl.addEventListener("input", function (event) {
+
+        if (fbUrl.validity.patternMismatch) {
+         fbUrl.setCustomValidity("url should be of format https?://.+");
+        }
+        else {
+            fbUrl.setCustomValidity("");
+        }
+    });
     }
     
     handleCostChange(event) {
         this.setState({
             cost : event.target.value,
         });
+var cost = document.getElementById("cost");
+    cost.addEventListener("input", function (event) {
+
+        if (cost.validity.patternMismatch) {
+         cost.setCustomValidity("cost must contain only digits");
+        }
+        else {
+            cost.setCustomValidity("");
+        }
+    });
     }
     
 
@@ -219,19 +282,21 @@ class Client extends React.Component {
                                                     </div><br />
                                                     <input type="text" 
                                                     id="address" 
-                                                    placeholder="Restaurant Address" 
+                                                    placeholder="Restaurant Address(Ex:HouseNo,Street}" 
                                                     onChange={this.handleAddressChange}
                                                     value={this.state.address}
                                                     required/>
                                                     <input type="text" 
                                                     id="contact" 
                                                     placeholder="Contact" 
+                                                    pattern="[0-9]{10}"
                                                     onChange={this.handleContactChange}
                                                     value={this.state.contact}
                                                     required/>
                                                     <input type="text" 
                                                     id="hpUrl" 
                                                     placeholder="Homepage Url" 
+                                                    pattern="https?://.+"
                                                     onChange={this.handlehpUrlChange}
                                                     value={this.state.hpUrl}
                                                     required/>
@@ -240,12 +305,14 @@ class Client extends React.Component {
                                                     placeholder="Facebook Url" 
                                                     onChange={this.handlefbUrlChange}
                                                     value={this.state.fbUrl}
+                                                    pattern="https?://.+"
                                                     required/>
                                                     <input type="text" 
                                                     id="cost" 
                                                     placeholder="Cost per person" 
                                                     onChange={this.handleCostChange}
                                                     value={this.state.cost}
+                                                    pattern="{0-9}"
                                                     required/>
                                                     <input type="text" 
                                                      name="Country" 
@@ -308,3 +375,4 @@ class Client extends React.Component {
 }
 
 export default Client; 
+

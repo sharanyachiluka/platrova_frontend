@@ -13,6 +13,8 @@ import HeaderAfterLog from './HeaderAfterLog';
 import AppLoginForm from './AppLoginForm';
 import AppSignUpForm from './AppSignUpForm';
 import UserProfile from './UserProfile';
+import GetAllRest from './GetAllRest';
+import ClientProfile from './ClientProfile';
 
 
 class Routes extends React.Component {
@@ -35,7 +37,9 @@ class Routes extends React.Component {
              
          
             <Route exact path="/myhome"  component={MyHome} />
-            <Route path="/myprofile" exact component={UserProfile}/>
+            <Route path="/userprofile" exact component={UserProfile}/>
+            <Route path="/clientprofile" exact component={ClientProfile}/>
+            <Route path="/restaurants" exact component={GetAllRest}/>
             <Footer/>
            
            
