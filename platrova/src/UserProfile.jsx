@@ -49,6 +49,7 @@ class UserProfile extends React.Component {
          name:result1.userName,
         email:result1.email,
         });
+        
     })
     .catch(function(error){
         console.log(error);
