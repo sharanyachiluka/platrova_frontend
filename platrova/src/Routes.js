@@ -16,36 +16,26 @@ import UserProfile from './UserProfile';
 import GetAllRest from './GetAllRest';
 import ClientProfile from './ClientProfile';
 import UpdatePassword from './UpdatePassword';
-
+import ForgotPassword from './ForgotPassword';
+import ForgotPassword1 from './ForgotPassword1';
 
 class Routes extends React.Component {
     render() {
         return(
             
          <div>
-                
-                    
-            
-           
-                <Route  path="/"  exact component={Home} />
-            
-                <Route  path="/signup"  exact component={AppSignUpForm} />
+          <Route  path="/"  exact component={Home} />
+            <Route  path="/signup"  exact component={AppSignUpForm} />
                 <Route  path="/login"    exact component={AppLoginForm} />
-
                 <Route path="/createres" exact component={Client} />
-            
-          
-             
-         
-            <Route exact path="/myhome"  component={MyHome} />
+              <Route exact path="/myhome"  component={MyHome} />
             <Route path="/userprofile" exact component={UserProfile}/>
             <Route path="/clientprofile" exact component={ClientProfile}/>
             <Route path="/restaurants" exact component={GetAllRest}/>
             <Route path="/updatepassword" exact component={UpdatePassword}/>
-            <Footer/>
-           
-           
-         </div>   
+            <Route path="/forgotpassword" exact component={ForgotPassword}/>
+            <Route path="/forgotpassword/:token" exact component={ForgotPassword1}/>
+       </div>   
             
         );
     }

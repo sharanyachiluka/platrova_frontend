@@ -25,6 +25,7 @@ class SignUp extends React.Component {
 			email: "",
 			password: "",
 			confirmPassword: "",
+			likes:"",
 			
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -110,6 +111,12 @@ class SignUp extends React.Component {
 		});
 	}
 
+	handleLikesChange(event) {
+		this.setState({
+			likes: event.target.value,
+		});
+	}
+
 	render() {
 		return (
 		<div style={divStyle}>
@@ -162,6 +169,14 @@ class SignUp extends React.Component {
 												placeholder="Re-enter password"
 												onChange={this.handleConfirmPasswordChange}
 												value={this.state.confirmPassword} />
+											<p>Likes</p>
+											<input type="text"
+												className="likes"
+												id="likes"
+												autoFocus
+												placeholder="Ex:NorthIndian,SouthIndian,Mexican,Italian"
+												onChange={this.handleLikesChange}
+												value={this.state.likes} />
 											<br />
 											<input type="submit" value="Sign up" />
 										</form>
