@@ -53,9 +53,10 @@ class LoginForm extends React.Component {
     .then(function(result1){
         //accesstoken=window.localStorage.getItem('result1.access_token');
         //expirytime=window.localStorage.getItem('response.expiry_time');
-        //refreshtoken=window.localStorage.getItem('response.refresh_token');
+		//refreshtoken=window.localStorage.getItem('response.refresh_token');
+		console.log(result1);
        window.alert("Login successful");
-        console.log(result1);
+        
 		accesstoken = result1.access_token;
 		role=result1.role;
 		console.log(accesstoken);
@@ -72,7 +73,7 @@ class LoginForm extends React.Component {
 		window.alert("please enter correct details");
         console.log(error);
     });
-        console.log(form);
+       
     
     }
 

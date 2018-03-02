@@ -89,7 +89,7 @@ class Client extends React.Component {
         localStorage.setItem("accesstoken",result1.access_token);
         localStorage.setItem("role",role);*/
         if(result1.name === name) {
-            window.alert("Restaurant created successfully");
+            window.alert("Your Restaurant will be reviewed");
         }
         else {
             window.alert("Please enter proper details");
@@ -255,41 +255,8 @@ var cost = document.getElementById("cost");
                                                     onChange={this.handleNameChange}
                                                     value={this.state.name}
                                                     required/>
-                                                    <div style={textstyle} onTypeChange={this.handleTypeChange}>
-                                                    Restaurant type:
-                                                    <br />
-                                                        <input type="checkbox" 
-                                                        id="type" 
-                                                        name="type"
-                                                        autoFocus
-                                                        value="North-Indian" 
-                                                        style={textstyle}
-                                                        />&nbsp;&nbsp;North Indian
-                                                        &nbsp;&nbsp;&nbsp;&nbsp;
-                                                        <input type="checkbox" 
-                                                        id="type" 
-                                                        name="type"
-                                                        autoFocus
-                                                        value="South-Indian" 
-                                                        style={textstyle}
-                                                        />&nbsp;&nbsp;South-Indian
-                                                        &nbsp;&nbsp;&nbsp;&nbsp;
-                                                        <input type="checkbox" 
-                                                        id="type" 
-                                                        name="type"
-                                                        autoFocus
-                                                        value="Italian" 
-                                                        style={textstyle}
-                                                        />&nbsp;&nbsp;Italian
-                                                        &nbsp;&nbsp;&nbsp;&nbsp;
-                                                        <input type="checkbox" 
-                                                        id="type" 
-                                                        name="type"
-                                                        autoFocus
-                                                        value="Chinese" 
-                                                        style={textstyle}
-                                                        />&nbsp;&nbsp;Chinese
-                                                    </div><br />
+                                                  
+                
                                                     <input type="text" 
                                                     id="address" 
                                                     placeholder="Restaurant Address(Ex:HouseNo,Street}" 

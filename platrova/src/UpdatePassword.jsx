@@ -82,7 +82,7 @@ class UpdatePassword extends React.Component {
             <div class="card">
              <h1>Update Password</h1>
                 <div class="container" >
-                <label>Old Password</label>
+                <label>Old Password</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <input type="password"
                      id="opassword"
                      required pattern="^[A-Za-z0-9_.-@]*$"
@@ -90,7 +90,7 @@ class UpdatePassword extends React.Component {
 					autoFocus
                      onChange={this.handleOldPasswordChange}
 					value={this.state.opassword} required/><br />
-                     <label>New Password</label>
+                     <label>New Password</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="password"
                      id="npassword"
                      required pattern="^[A-Za-z0-9_.-@]*$"
@@ -98,7 +98,7 @@ class UpdatePassword extends React.Component {
 					autoFocus
                      onChange={this.handleNewPasswordChange}
 					value={this.state.npassword} required/><br />
-                     <label>Confirm Password</label>
+                     <label>Confirm Password</label>&nbsp;
                     <input type="password"
                      id="cpassword"
                      required pattern="^[A-Za-z0-9_.-@]*$"

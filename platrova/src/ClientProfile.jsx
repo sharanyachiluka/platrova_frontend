@@ -64,10 +64,14 @@ class ClientProfile extends React.Component {
                 <img src="image.jpg" style={divStyle}/>
             <div class="container">
                 <center><h3><b>User Name:{this.state.name}</b></h3></center>
-                <p>Email:{this.state.email}</p>
-                
-                <p><Button bsStyle="danger"><Link to='/createres' class="active">Create Restaurant</Link></Button></p>
+                <p>Email:{this.state.email}</p><br/>
+                <div className="float-lt">
                 <p><Button bsStyle="danger"><Link to='/restaurants' class="active">My Restaurants</Link></Button></p>
+              </div>
+              <div className="float-lt">
+              <p><Button bsStyle="danger"><Link to='/updatepassword' class="active">Update Password</Link></Button></p></div>
+                <div className="float-center">
+                <p><Button bsStyle="danger"><Link to='/createres' class="active">Create Restaurant</Link></Button></p></div>
             </div>
             </div>
             </div>
