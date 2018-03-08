@@ -1,7 +1,7 @@
 import React from 'react';
 import image1 from './image1.jpg';
 import './HoverEffect.css';
-import hoverimage from './hoverimage.jpg';
+//import hoverimage from './hoverimage.jpg';
 
 var divStyle = {
     width: "100%",

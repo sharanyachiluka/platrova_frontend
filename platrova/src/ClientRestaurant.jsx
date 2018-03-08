@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 
 
 var accesstoken = localStorage.getItem("accesstoken");
-class Restaurant extends React.Component {
+class ClientRestaurant extends React.Component {
 
    
     render () {
@@ -28,4 +28,4 @@ class Restaurant extends React.Component {
         );
     }
 }
-export default Restaurant;
+export default ClientRestaurant;

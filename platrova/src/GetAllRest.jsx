@@ -4,7 +4,7 @@ import './UserProfile.css';
 import { BrowserRouter, Router, Link } from 'react-router-dom';
 import { ButtonToolbar, Button } from 'react-bootstrap';
 import HeaderAfterLog from './HeaderAfterLog';
-import Restaurant from './Restaurant';
+import ClientRestaurant from './ClientRestaurant';
 
 var imageStyle = {
     width: "100%",
@@ -55,13 +55,13 @@ class GetAllRest extends React.Component {
             console.log(this.state.id[i].name);
             Holder.push(
                 (
-                    <Restaurant Id={this.state.id[i].id}
+                    <ClientRestaurant Id={this.state.id[i].id}
                                 name={this.state.id[i].name} 
                                 address={this.state.id[i].address}
                                 contact={this.state.id[i].contact}
                                 hpUrl={this.state.id[i].homepageUrl}
                                 fbUrl={this.state.id[i].fbUrl}
-                                cost={this.state.id[i].cost} ></Restaurant>
+                                cost={this.state.id[i].cost} ></ClientRestaurant>
                 )
             );
         }
