@@ -55,7 +55,8 @@ class GetAllRest extends React.Component {
             console.log(this.state.id[i].name);
             Holder.push(
                 (
-                    <Restaurant name={this.state.id[i].name} 
+                    <Restaurant Id={this.state.id[i].id}
+                                name={this.state.id[i].name} 
                                 address={this.state.id[i].address}
                                 contact={this.state.id[i].contact}
                                 hpUrl={this.state.id[i].homepageUrl}
