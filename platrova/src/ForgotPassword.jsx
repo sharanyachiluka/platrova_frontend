@@ -7,22 +7,22 @@ var accesstoken=localStorage.getItem("accesstoken");
 class ForgotPasssword extends React.Component {
 
     constructor(props) {
-		super(props);
+        super(props);
 
-		this.state = {	
-			email: "",	
-		};
-		this.handleSubmit = this.handleSubmit.bind(this);
-		this.handleEmailChange = this.handleEmailChange.bind(this);
-	}
+        this.state = {  
+            email: "",  
+        };
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleEmailChange = this.handleEmailChange.bind(this);
+    }
     handleSubmit(event) {
 
-		event.preventDefault();
+        event.preventDefault();
 
         this.setState({ value: event.target.value });
         var email = document.getElementById('email').value;
         
-			fetch ( "http://10.10.200.22:9000/mail/:email" , 
+            fetch ( "http://10.10.200.22:9000/mail/"+email , 
             {
              method: "GET",     
              headers: {
@@ -54,10 +54,10 @@ class ForgotPasssword extends React.Component {
                 <input type="email"
                        id="email"
                        autoFocus
-					   placeholder="Enter email id"
-				       onChange={this.handleEmailChange}
-					   value={this.state.email} required/><br/>
-                <Button bsStyle="danger">Submit</Button>
+                       placeholder="Enter email id"
+                       onChange={this.handleEmailChange}
+                       value={this.state.email} required/><br/>
+                <Button bsStyle="danger" onClick={this.handleSubmit}>Submit</Button>
                </Card>  
               </center>
         );
