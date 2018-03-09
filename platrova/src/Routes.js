@@ -6,7 +6,7 @@ import App from './App';
 import Header from './Header';
 import Footer from './Footer';
 import { BrowserRouter,Route,Switch} from 'react-router-dom';
-//import UserProfile from './ClientHomepage';
+import SearchResult from './SearchResult';
 import Client from './Client';
 import MyHome from './MyHome';
 import HeaderAfterLog from './HeaderAfterLog';
@@ -19,6 +19,7 @@ import UpdatePassword from './UpdatePassword';
 import ForgotPassword from './ForgotPassword';
 import ForgotPassword1 from './ForgotPassword1';
 import EditRest from './EditRest';
+import SearchRestaurant from './SearchRestaurant'; 
 
 class Routes extends React.Component {
     render() {
@@ -37,6 +38,7 @@ class Routes extends React.Component {
             <Route path="/updatepassword" exact component={UpdatePassword}/>
             <Route path="/forgotpassword" exact component={ForgotPassword}/>
             <Route path="/forgotpassword/:token" exact component={ForgotPassword1}/>
+            <Route path="/searchresult/:search" exact component={SearchResult}/>
        </div>   
             
         );

@@ -290,15 +290,15 @@ var cost = document.getElementById("cost");
                                                     required/>
                                                     <input type="text" 
                                                     id="type" 
-                                                    placeholder="Ex:FoodTruck,Bar & Restaurant,Café..." 
+                                                    placeholder="Restaurant type Ex:FoodTruck,Bar & Restaurant,Café..." 
                                                     onChange={this.handleTypeChange}
-                                                    value={this.state.name}
+                                                    value={this.state.type}
                                                     required/>
                                                      <input type="text" 
                                                     id="cuisine" 
-                                                    placeholder="Ex:South Indian,North Indian,Italian..." 
+                                                    placeholder="Cuisine Ex:South Indian,North Indian,Italian..." 
                                                     onChange={this.handleCuisineChange}
-                                                    value={this.state.name}
+                                                    value={this.state.cuisine}
                                                     required/>
                 
                                                     <input type="text" 
@@ -323,7 +323,7 @@ var cost = document.getElementById("cost");
                                                     <input type="text" 
                                                     id="timings" 
                                                     placeholder="Timings.Ex:10AM-9PM..." 
-                                                    pattern="[0-9]{10}"
+                                                   
                                                     onChange={this.handleTimingsChange}
                                                     value={this.state.timings}
                                                     required/>

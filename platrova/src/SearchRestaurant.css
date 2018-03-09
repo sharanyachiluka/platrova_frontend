@@ -1,0 +1,46 @@
+
+.box{
+  border: 1px solid #ebebeb5b;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	-moz-box-shadow: 2px 2px 3px #666;
+	-webkit-box-shadow: 2px 2px 3px #666;
+	box-shadow: 2px 2px 3px #666;
+	font-size:1vw;
+	padding: 4px 7px;
+	outline: 0;
+  -webkit-appearance: none;
+  background-color: rgb(0, 0, 0);
+  -webkit-text-fill-color: #fff;
+  margin-top: 3cm;
+  margin-left: 3cm;
+  margin-right: 3cm;
+}
+
+.card {
+    background: #fff;
+    display: inline-block;
+    border: 1px solid #ddd;
+  }
+
+  .image {
+    float: left;
+    background: #000;
+    width: 25%;
+    height: 150px
+  }
+
+  .content {
+    float: right;
+    height: 140px;
+    width: 73%;
+    overflow: hidden;
+    padding: 5px;
+  }
+
+  .content h4 {
+    margin: 5px 0;
+  }
+  
+  

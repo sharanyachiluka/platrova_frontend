@@ -28,3 +28,6 @@
     color: rgb(255, 255, 255);
     font-size: 1in;
 }
+.active {
+    color:'white';
+}

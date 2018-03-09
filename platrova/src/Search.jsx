@@ -3,6 +3,7 @@ import request from 'superagent';
 import background from './background.jpg';
 import './Search.css';
 import { Button } from 'react-bootstrap';
+import { BrowserRouter, Router, Link } from 'react-router-dom';
 
 var sectionStyle = {
     width: "100%",
@@ -20,44 +21,18 @@ class Search extends React.Component {
         super(props);
         
 this.state={
-    search:"",
+    keyword:"",
 }
        
-        this.handleSearch = this.handleSearch.bind(this);
-        this.handleSearchChange = this.handleSearchChange.bind(this);
+       this.handleSearchChange = this.handleSearchChange.bind(this);
     }
 
-    handleSearch (event) {
-
-        event.preventDefault();
-
-        this.setState({ value: event.target.value });
-
-        var search = document.getElementById('search').value;
-        var form = JSON.stringify({search :search});
-        fetch ( "http://10.10.200.22:9000/restaurant/search" , 
-        {
-            method: "POST",     
-            headers: {
-                "Content-Type": "application/json",
-                "Accept"    :   "application,json",
-                
-                   },     
-                   body: form,    
-          
-    }).then(result1=>result1.json())
-    .then((result1) => {
-        console.log(result1);
-    })
-    .catch(function(error){
-        console.log(error);
-   });
-    }
+   
         
 
     handleSearchChange(event) {
         this.setState({
-            search : event.target.value,
+            keyword : event.target.value,
         });
     }
 
@@ -74,12 +49,12 @@ this.state={
                                     id="search" 
                                     size="200"
                                     onChange={this.handleSearchChange}
-                                    value={this.state.search} />
+                                    value={this.state.keyword} />
                         </div>
                         <div className="col-lg-7">
                             <div className="btn btn-block">
-                                <Button bsStyle="danger" bsSize="medium float-right" onClick={this.handleSearch} active >
-                                    <span className="glyphicon glyphicon-search"></span>Search
+                                <Button bsStyle="danger" bsSize="medium float-right" active >
+                                    <span className="glyphicon glyphicon-search"></span><Link to={'/searchresult/'+this.state.keyword} class="active" >Search</Link>
                                  </Button>
                             </div>
                         </div>
