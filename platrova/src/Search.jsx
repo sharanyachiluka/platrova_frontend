@@ -4,7 +4,6 @@ import background from './background.jpg';
 import './Search.css';
 import { Button } from 'react-bootstrap';
 import { BrowserRouter, Router, Link } from 'react-router-dom';
-import Geolocation from "react-geolocation";
 
 var sectionStyle = {
     width: "100%",
