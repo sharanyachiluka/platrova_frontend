@@ -19,7 +19,7 @@ import UpdatePassword from './UpdatePassword';
 import ForgotPassword from './ForgotPassword';
 import ForgotPassword1 from './ForgotPassword1';
 import EditRest from './EditRest';
-import SearchRestaurant from './SearchRestaurant'; 
+import EditUserProfile from './EditUserProfile';
 
 class Routes extends React.Component {
     render() {
@@ -32,6 +32,7 @@ class Routes extends React.Component {
                 <Route path="/createres" exact component={Client} />
               <Route exact path="/myhome"  component={MyHome} />
             <Route path="/userprofile" exact component={UserProfile}/>
+            <Route path="/editprofile" exact component={EditUserProfile}/>
             <Route path="/clientprofile" exact component={ClientProfile}/>
             <Route path="/restaurants" exact component={GetAllRest}/>
             <Route path="/editrestaurant/:Id" exact component={EditRest}/>
