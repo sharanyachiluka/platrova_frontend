@@ -25,6 +25,7 @@ class UserProfile extends React.Component {
         this.state = {
             name: "",
             email : "",
+            likes : "",
         };
     }
 
@@ -48,6 +49,7 @@ class UserProfile extends React.Component {
        this.setState ({
          name:result1.userName,
         email:result1.email,
+        likes:result1.likes,
         });
         
     })
@@ -67,6 +69,7 @@ class UserProfile extends React.Component {
             <div class="container">
                 <center><h3><b>User Name:{this.state.name}</b></h3></center>
                 <p>Email:{this.state.email}</p>
+                <p>Likes:{this.state.likes}</p>
                 
                 <p><Button bsStyle="danger"><Link to='/editprofile' class="active">Edit Profile</Link></Button></p>
                 <p><Button bsStyle="danger"><Link to='/updatepassword' class="active">Update Password</Link></Button></p>
