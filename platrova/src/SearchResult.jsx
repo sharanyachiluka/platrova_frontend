@@ -15,6 +15,9 @@ class SearchResult extends React.Component {
     }
 
     componentDidMount() {
+
+        console.log(this.props.match.params.search);
+        var form=JSON.stringify({keyword:this.props.match.params.search});
         fetch("http://10.10.200.22:9000/restaurant/search",
             {
                 method: "POST",
@@ -24,6 +27,7 @@ class SearchResult extends React.Component {
                     
 
                 },
+                body:form,
 
             }).then(function (response) {
                 return (response.json());

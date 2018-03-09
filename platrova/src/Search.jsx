@@ -21,7 +21,7 @@ class Search extends React.Component {
         super(props);
         
 this.state={
-    keyword:"",
+    search:"",
 }
        
        this.handleSearchChange = this.handleSearchChange.bind(this);
@@ -49,12 +49,12 @@ this.state={
                                     id="search" 
                                     size="200"
                                     onChange={this.handleSearchChange}
-                                    value={this.state.keyword} />
+                                    value={this.state.search} />
                         </div>
                         <div className="col-lg-7">
                             <div className="btn btn-block">
                                 <Button bsStyle="danger" bsSize="medium float-right" active >
-                                    <span className="glyphicon glyphicon-search"></span><Link to={'/searchresult/'+this.state.keyword} class="active" >Search</Link>
+                                    <span className="glyphicon glyphicon-search"></span><Link to={'/searchresult/'+this.state.search} class="active" >Search</Link>
                                  </Button>
                             </div>
                         </div>
