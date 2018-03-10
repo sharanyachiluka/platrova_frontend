@@ -22,8 +22,8 @@ class Search extends React.Component {
         
 this.state={
     search:"",
-    lat:"",
-    lng:"",
+    
+  
 }
          this.handleNearBy = this.handleNearBy.bind(this);
        this.handleSearchChange = this.handleSearchChange.bind(this);

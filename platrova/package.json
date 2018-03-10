@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.0.0",
+    "google-maps-react": "^1.1.2",
     "react": "^16.2.0",
     "react-background-image-loader": "0.0.5",
     "react-body-backgroundcolor": "^1.0.1",
@@ -11,6 +12,7 @@
     "react-dom": "^16.2.0",
     "react-geolocation": "^1.0.3",
     "react-gmaps": "^1.7.0",
+    "react-google-maps": "^9.4.5",
     "react-history": "^0.18.2",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
