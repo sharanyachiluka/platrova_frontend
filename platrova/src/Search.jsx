@@ -39,38 +39,7 @@ this.state={
     }
 
     handleNearBy(event) {
-
-
-        
-            navigator.geolocation.getCurrentPosition(
-              position => {
-                this.setState({ lat: position.coords.latitude, lng: position.coords.longitude});
-
-                var form = JSON.stringify({lat:this.state.lat, lng: this.state.lng});
-                fetch ( "http://10.10.200.22:9000/restaurant/nearBy" , 
-                {
-                    method: "POST",     
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Accept"    :   "application,json"
-                        
-                      },       
-                    body: form, 
-            }).then(result1=>result1.json())
-            .then(function(result1){
-                console.log(result1);
-                console.log("sent");            
-               
-            })
-            .catch(function(error){
-              
-                console.log(error);
-            });
-
-              },
-              error => console.log(error)
-            );      
-        
+        window.location.href="/nearbyresult";
     }
 
     render() {

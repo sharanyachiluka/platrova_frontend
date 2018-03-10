@@ -20,6 +20,7 @@ import ForgotPassword from './ForgotPassword';
 import ForgotPassword1 from './ForgotPassword1';
 import EditRest from './EditRest';
 import EditUserProfile from './EditUserProfile';
+import NearByResult from './NearByResult';
 
 class Routes extends React.Component {
     render() {
@@ -40,6 +41,7 @@ class Routes extends React.Component {
             <Route path="/forgotpassword" exact component={ForgotPassword}/>
             <Route path="/forgotpassword/:token" exact component={ForgotPassword1}/>
             <Route path="/searchresult/:search" exact component={SearchResult}/>
+            <Route path="/nearbyresult" exact component={NearByResult}/>
        </div>   
             
         );
