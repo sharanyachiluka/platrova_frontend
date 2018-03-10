@@ -12,7 +12,6 @@ class SearchRestaurant extends React.Component {
         return (
           <Row>
           <div class="box">
-          
             <p>Restaurant Name:{this.props.name}</p>
             <p>Restaurant Type:{this.props.type}</p>
             <p>Cuisine:{this.props.cuisine}</p>

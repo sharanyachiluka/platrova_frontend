@@ -34,7 +34,7 @@ this.state={
 
     handleSearchChange(event) {
         this.setState({
-            keyword : event.target.value,
+            search : event.target.value,
         });
     }
 
@@ -58,9 +58,6 @@ this.state={
                     body: form, 
             }).then(result1=>result1.json())
             .then(function(result1){
-                //accesstoken=window.localStorage.getItem('result1.access_token');
-                //expirytime=window.localStorage.getItem('response.expiry_time');
-                //refreshtoken=window.localStorage.getItem('response.refresh_token');
                 console.log(result1);
                 console.log("sent");            
                
