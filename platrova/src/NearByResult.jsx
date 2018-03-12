@@ -36,8 +36,6 @@ const MapWithAMarkers = compose(
       center={{ lat:props.latitude,
         lng: props.longitude}}
     >
-  
-      >
     <Marker
       position={{lat:props.latitude,lng:props.longitude}}
       title={"Your position"}

@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.0.0",
-    "google-maps-react": "^1.1.2",
+    "google-maps-react": "^1.1.4",
     "react": "^16.2.0",
     "react-background-image-loader": "0.0.5",
     "react-body-backgroundcolor": "^1.0.1",

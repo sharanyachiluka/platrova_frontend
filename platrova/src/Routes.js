@@ -21,6 +21,7 @@ import ForgotPassword1 from './ForgotPassword1';
 import EditRest from './EditRest';
 import EditUserProfile from './EditUserProfile';
 import NearByResult from './NearByResult';
+import BeAPartner from './BeAPartner';
 
 class Routes extends React.Component {
     render() {
@@ -32,6 +33,7 @@ class Routes extends React.Component {
                 <Route  path="/login"    exact component={AppLoginForm} />
                 <Route path="/createres" exact component={Client} />
               <Route exact path="/myhome"  component={MyHome} />
+              <Route exact path="/beapartner" component={BeAPartner}/>
             <Route path="/userprofile" exact component={UserProfile}/>
             <Route path="/editprofile" exact component={EditUserProfile}/>
             <Route path="/clientprofile" exact component={ClientProfile}/>

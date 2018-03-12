@@ -36,14 +36,12 @@ class Footer extends React.Component {
 					<i class="fa fa-envelope"></i>
 					<p><a href="mailto:support@company.com">platrovaservice@gmail.com</a></p>
 				</div>
-				<div>
 				
-				</div>
 
 					<div>
 				
 				<p><h6><font color="white">Want to make Profits?</font></h6>
-				<Link to ='/signup'><h6>Partner with us</h6></Link></p>
+				<Link to ='/beapartner'><h6>Partner with us</h6></Link></p>
 			     
 				 </div>
 
