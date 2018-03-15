@@ -85,7 +85,7 @@ class Client extends React.Component {
         var refreshtoken,expirytime;
         var accesstoken=localStorage.getItem("accesstoken");
         var role='user';
-        var form = JSON.stringify({name : name, type:type, cuisine:cuisine, address : address, area: area,  contact : contact, timings: timings, hpUrl : hpUrl, fbUrl : fbUrl, cost : cost, file:file,lat : lat, lng : lng});
+        var form = JSON.stringify({name : name, type:type, cuisine:cuisine, address : address, area: area,  contact : contact, timings: timings, hpUrl : hpUrl, fbUrl : fbUrl, cost : cost, file:file,lat : lat, lng : lng,img:this.state.img});
         fetch ( "http://10.10.200.22:9000/new/restaurant" , 
         {
             method: "POST",     
@@ -284,10 +284,11 @@ var cost = document.getElementById("cost");
                     self.setState({
                         img: result.data,
                     });
+                    console.log(this.state.img);
                     
                 })
-              //  console.log(img);
-    }
+              
+    }  
     
 
     onMapCreated(map) {
