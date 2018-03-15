@@ -10,6 +10,8 @@ class HeaderAfterLog extends React.Component {
 		super(props);
 
         this.handleUserChange = this.handleUserChange.bind(this);
+        this.handleLogOut = this.handleLogOut.bind(this);
+        
 	}
 
 
@@ -50,6 +52,35 @@ class HeaderAfterLog extends React.Component {
     });
     }
 
+    handleLogOut(event){
+
+        event.preventDefault();
+        var accesstoken=localStorage.getItem("accesstoken");
+        var refreshtoken,expirytime;
+		var role;
+		fetch ( "http://10.10.200.22:9000/logout" , 
+        {
+            method: "GET",     
+            headers: {
+                "Content-Type": "application/json",
+                "Accept"    :   "application,json",
+                "Authorization" : 'Bearer'+ accesstoken,
+              },       
+           
+    }).then(function(response){
+        if (response.status>=400){
+            throw new Error("Click again");}      
+    })
+    .then(function(data){
+               console.log("sent");
+        window.alert("LOgged out");
+        
+    });
+	
+    }
+
+
+
 
     render() {
         return (
@@ -65,7 +96,7 @@ class HeaderAfterLog extends React.Component {
                         <Nav pullRight>
                             <ButtonToolbar>
                                 <Button bsStyle="danger" onClick={this.handleUserChange}><Link to='/myprofile' class="active">MyProfile</Link></Button>
-                                <Button bsStyle="danger"><Link to='/' class="active">Logout</Link></Button>
+                                <Button bsStyle="danger" onClick={this.handleLogout}><Link to='/' class="active">Logout</Link></Button>
                             </ButtonToolbar>
                         </Nav>
                     </Navbar.Form>

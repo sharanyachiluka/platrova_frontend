@@ -5,6 +5,8 @@ import './Client.css';
 import request from 'superagent';
  import bann from './bann.jpg';
  import HeaderAfterLog from './HeaderAfterLog';
+ import axios,{ post } from 'axios';
+
 
 let coords = {
     lat: 17.3850,
@@ -41,8 +43,10 @@ class Client extends React.Component {
             hpUrl: "",
             fbUrl: "",
             cost: "", 
+            file : "",
             lat: "",
             lng: "",
+            img:"",
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -56,6 +60,7 @@ class Client extends React.Component {
         this.handlehpUrlChange = this.handlehpUrlChange.bind(this);
         this.handlefbUrlChange = this.handlefbUrlChange.bind(this);
         this.handleCostChange = this.handleCostChange.bind(this);
+        this.handleFile = this.handleFile.bind(this);
         this.onDragEnd=this.onDragEnd.bind(this);
     }
     handleSubmit(event) {
@@ -74,12 +79,13 @@ class Client extends React.Component {
         var hpUrl = document.getElementById('hpUrl').value;
         var fbUrl = document.getElementById('fbUrl').value;
         var cost = document.getElementById('cost').value;
+        var file = document.getElementById('file').value;
         var lat = document.getElementById('latitude').value;
         var lng = document.getElementById('longitude').value;
         var refreshtoken,expirytime;
         var accesstoken=localStorage.getItem("accesstoken");
         var role='user';
-        var form = JSON.stringify({name : name, type:type, cuisine:cuisine, address : address, area: area,  contact : contact, timings: timings, hpUrl : hpUrl, fbUrl : fbUrl, cost : cost, lat : lat, lng : lng});
+        var form = JSON.stringify({name : name, type:type, cuisine:cuisine, address : address, area: area,  contact : contact, timings: timings, hpUrl : hpUrl, fbUrl : fbUrl, cost : cost, file:file,lat : lat, lng : lng});
         fetch ( "http://10.10.200.22:9000/new/restaurant" , 
         {
             method: "POST",     
@@ -244,6 +250,44 @@ var cost = document.getElementById("cost");
         }
     });
     }
+
+    handleFile(event) {
+        var file,img;
+        var self=this;
+        console.log(event.target.files[0]);
+     
+      /*  this.setState({
+           file : event.target.files[0]   
+            });*/
+
+            const url = 'http://10.10.200.22:9000/images';
+            const formData = new FormData();
+           
+            formData.append('file',event.target.files[0]);
+          
+            const config={
+                
+                headers: {
+                    'content-type': 'multipart/form-data',
+                    'accept'     : 'application/json'
+                 }
+            }
+            console.log("be");
+         //   return post(url,formData,config)
+
+
+
+            axios.post(
+                url,formData,config )
+                .then(result => {
+                    console.log(result.data);
+                    self.setState({
+                        img: result.data,
+                    });
+                    
+                })
+              //  console.log(img);
+    }
     
 
     onMapCreated(map) {
@@ -348,6 +392,7 @@ var cost = document.getElementById("cost");
                                                     value={this.state.cost}
                                                     pattern="{0-9}"
                                                     required/>
+                                                    
                                                     <input type="text" 
                                                      name="Country" 
                                                      placeholder="latitude"
@@ -361,6 +406,12 @@ var cost = document.getElementById("cost");
                                                      id="longitude" 
                                                      value="" 
                                                      readonly="readonly"/>
+
+                                                     <input type="file"
+                                                    id="file"
+                                                    onChange={this.handleFile}
+                                                    value={this.state.file}/>
+                                                    
                                                     <input type="submit" value="Send"/>
                                                 </form>
                                             </div>      
@@ -398,6 +449,7 @@ var cost = document.getElementById("cost");
                             </div>
                   
                 </div>
+                
                     <div class="clear"></div>
                         <div class="footer-agileits">
                         </div>
@@ -409,4 +461,5 @@ var cost = document.getElementById("cost");
 }
 
 export default Client; 
+
 

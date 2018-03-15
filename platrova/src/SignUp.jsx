@@ -32,6 +32,7 @@ class SignUp extends React.Component {
 		this.handleNameChange = this.handleNameChange.bind(this);
 		this.handleEmailChange = this.handleEmailChange.bind(this);
 		this.handlePasswordChange = this.handlePasswordChange.bind(this);
+		this.handleLikesChange = this.handleLikesChange.bind(this);
 		this.handleConfirmPasswordChange = this.handleConfirmPasswordChange.bind(this);
 	}
 
@@ -45,12 +46,13 @@ class SignUp extends React.Component {
 		var email = document.getElementById('email').value;
 		var password = document.getElementById('password').value;
 		var confirmPassword = document.getElementById('confirmPassword').value;
+		var likes = document.getElementById('likes').value;
 
 		if (password === confirmPassword) {
 
 			request
 				.post("http://10.10.200.22:9000/users")
-				.send({ name: name, email: email, password: password})
+				.send({ name: name, email: email, password: password , likes:likes})
 				.then(
 				(response) => {
 					// response.body will be the returned data from your play app, which is an array of objects

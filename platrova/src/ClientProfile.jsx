@@ -8,7 +8,7 @@ import HeaderAfterLog from './HeaderAfterLog';
 var imageStyle = {
     width: "100%",
     height: "700px",
-    backgroundImage: `url(${image})`,
+   backgroundImage: `url(${image})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     overflow: 'hidden'

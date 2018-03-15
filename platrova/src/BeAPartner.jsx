@@ -13,6 +13,7 @@ var bg = {
     backgroundRepeat: 'no-repeat',
     backgroundSize:'cover',
     overflow:'hidden',
+    
 }
 var textstyle = {
     color: 'white',
@@ -105,7 +106,7 @@ class Client extends React.Component {
             <HeaderAfterLog/><br />
             <body>
                <div style={bg}>
-                <div className="col-md-3">
+                <div className="col-md-7" >
                     <div class="float-lt" >
 
                         <div class="login-w3l"> 
