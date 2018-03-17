@@ -4,6 +4,7 @@ import request from 'superagent';
 import './Client.css';
  import bann from './bann.jpg';
  import HeaderAfterLog from './HeaderAfterLog';
+ import axios,{ post } from 'axios';
 
 
 var bg = {
@@ -33,6 +34,8 @@ class EditUserProfile extends React.Component {
             name: "",
             email : "",
             likes:"",
+            img:"",
+            image:"",
         };
 
        
@@ -56,7 +59,10 @@ componentDidMount() {
              name:result1.userName,
             email:result1.email,
             likes:result1.likes,
+            img:result1.img,
             });
+            console.log(this.state.img);
+        
             
         })
 
@@ -69,7 +75,7 @@ componentDidMount() {
         
         this.handleLikesChange = this.handleLikesChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-
+        this.handleFile = this.handleFile.bind(this);
 
     }
 
@@ -84,7 +90,7 @@ componentDidMount() {
         var refreshtoken,expirytime;
         var accesstoken=localStorage.getItem("accesstoken");
         var role='user';
-        var form = JSON.stringify({likes: likes });
+        var form = JSON.stringify({likes: likes,image:this.state.image });
         fetch ( "http://10.10.200.22:9000/user/edit" , 
         {
             method: "POST",     
@@ -97,12 +103,7 @@ componentDidMount() {
     }).then(result1 => result1.json())
     .then(function(result1){
         console.log(result1);
-        /*accesstoken = result1.access_token;
-        //role=result1.role;
-        //console.log(accesstoken);
-        //console.log(role);
-        localStorage.setItem("accesstoken",result1.access_token);
-        localStorage.setItem("role",role);*/
+       
       console.log("sent")
         
        })
@@ -119,7 +120,42 @@ componentDidMount() {
 
     }
 
+    handleFile(event) {
+        var file,image;
+        var current=this;
+        console.log(event.target.files[0]);
+     
+      /*  this.setState({
+           file : event.target.files[0]   
+            });*/
 
+            const url = 'http://10.10.200.22:9000/images';
+            const formData = new FormData();
+           
+            formData.append('file',event.target.files[0]);
+          
+            const config={
+                
+                headers: {
+                    'content-type': 'multipart/form-data',
+                    'accept'     : 'application/json'
+                 }
+            }
+            console.log("be");
+         //   return post(url,formData,config)
+            axios.post(
+                url,formData,config )
+                .then(result => {
+                    console.log(result.data);
+                    current.setState({
+                        image: result.data,
+                    });
+                    console.log(this.state.image);
+                    
+                })
+              
+    }  
+    
     render () {
         return (
            
@@ -137,6 +173,13 @@ componentDidMount() {
                                         <p>Create Accounts..Make Profits..</p>
                                             <div class="login-form-c">  
                                                  <form autoComplete="off" onSubmit={this.handleSubmit}>
+
+                                                     <img src = {this.state.img} alt="pp" width="250" height="210" />&nbsp;&nbsp;
+
+                                                        <input type="file" id="img" 
+                                                        onChange={this.handleFile} 
+                                                        value= {this.state.file} />   <br/>  <br/>  <br/>                                 
+
                                                     <input type="text"
                                                           id="name"
                                                           value={this.state.name} disabled="disabled"
@@ -150,10 +193,9 @@ componentDidMount() {
                                                       placeholder="North Indian, Mexican, Chinese..." 
                                                     onChange={this.handleLikesChange}
                                                     value={this.state.likes}
-                                                    required/>                                          
-                                                   
+                                                    required/>    
 
-                                                   
+                                                                                                    
                                                    
                                                     <input type="submit" value="Send"/>
                                                 </form>
