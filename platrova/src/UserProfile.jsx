@@ -13,9 +13,9 @@ var imageStyle = {
     backgroundSize: 'cover',
     overflow: 'hidden'
 }
-var divStyle = {
+/*var divStyle = {
     width: '100%',
-}
+}*/
 var accesstoken=localStorage.getItem("accesstoken");
  
 class UserProfile extends React.Component {
@@ -26,6 +26,8 @@ class UserProfile extends React.Component {
             name: "",
             email : "",
             likes : "",
+            img:"",
+
         };
     }
 
@@ -50,6 +52,7 @@ class UserProfile extends React.Component {
          name:result1.userName,
         email:result1.email,
         likes:result1.likes,
+        img:result1.img,
         });
         
     })
@@ -65,7 +68,7 @@ class UserProfile extends React.Component {
             <br /><br /><br />
             <div className="title"><center><h1>My Profile</h1></center></div>
             <div class="card">
-                <img src="image.jpg" style={divStyle}/>
+                <img src={this.state.img} height="400" width="500" />
             <div class="container">
                 <center><h3><b>User Name:{this.state.name}</b></h3></center>
                 <p>Email:{this.state.email}</p>
