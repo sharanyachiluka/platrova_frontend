@@ -1,11 +1,11 @@
 .header {
     height:40px;
-    position:fixed;
+   
    
 }
 
 #header-sroll {
-    position:fixed;
+ 
     height: 50px;
     background:rgb(48, 45, 45);
     left:0;

@@ -43,6 +43,7 @@ class EditRest extends React.Component {
             hpUrl: "",
             fbUrl: "",
             cost: "", 
+            status: "",
            
         };
 
@@ -79,8 +80,14 @@ class EditRest extends React.Component {
             hpUrl: result1.homepageUrl,
             fbUrl: result1.fbUrl,
             cost: result1.cost, 
+            status: result1.status,
            
             });
+           if(this.state.status === "New"){
+               this.setState ({
+                   status :"Yet to be Reviewed",
+               })
+           }
             
         })
         .catch(function(error){
@@ -118,11 +125,11 @@ class EditRest extends React.Component {
         var hpUrl = document.getElementById('hpUrl').value;
         var fbUrl = document.getElementById('fbUrl').value;
         var cost = document.getElementById('cost').value;
-       
+        var status = document.getElementById('status').value;
         var refreshtoken,expirytime;
         var accesstoken=localStorage.getItem("accesstoken");
         var role='user';
-        var form = JSON.stringify({name : this.state.name, type:type, cuisine: cuisine, address : address,contact : contact, timings: timings, hpUrl : hpUrl, fbUrl : fbUrl, cost : cost});
+        var form = JSON.stringify({name : this.state.name, type:type, cuisine: cuisine, address : address,contact : contact, timings: timings, hpUrl : hpUrl, fbUrl : fbUrl, cost : cost, status: status});
         fetch ( "http://10.10.200.22:9000/restaurant/edit" , 
         {
             method: "POST",     
@@ -322,6 +329,11 @@ var cost = document.getElementById("cost");
                                                     value={this.state.cost}
                                                     pattern="{0-9}"
                                                     required/>
+                                                     <input type="text" 
+                                                    id="status"
+                                                    placeholder="Status of Restaurant"
+                                                    value={this.state.status}
+                                                    disabled="disabled"/>
                                                    
                                                     <input type="submit" value="Send"/>
                                                 </form>

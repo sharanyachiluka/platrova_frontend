@@ -21,7 +21,8 @@ class ClientRestaurant extends React.Component {
                 <CardSubtitle>Contact:{this.props.contact}</CardSubtitle><br/>
                 <CardSubtitle>Hompage Url:{this.props.hpUrl}</CardSubtitle><br/>
                 <CardSubtitle>Facebook Url:{this.props.fbUrl}</CardSubtitle><br/>
-                <CardSubtitle>Cost per person:{this.props.cost}</CardSubtitle>
+                <CardSubtitle>Cost per person:{this.props.cost}</CardSubtitle><br/>
+                <CardSubtitle>Status:{this.props.status}</CardSubtitle><br/>
                 <Button bsStyle="danger"><Link to= {'/editrestaurant/'+Id} class="active">Edit Restaurant</Link></Button>
                </Card>  
                </Col>

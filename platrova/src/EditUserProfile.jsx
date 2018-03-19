@@ -169,8 +169,8 @@ componentDidMount() {
                         <div class="login-w3l" > 
                         
                                 <div class="top-img-agileits-w3layouts">
-                                    <h2 class="sub-head-w3-agileits">Platrova</h2>
-                                        <p>Create Accounts..Make Profits..</p>
+                                    <h2 class="sub-head-w3-agileits">Edit Profile</h2>
+                                       
                                             <div class="login-form-c">  
                                                  <form autoComplete="off" onSubmit={this.handleSubmit}>
 

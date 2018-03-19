@@ -61,7 +61,8 @@ class GetAllRest extends React.Component {
                                 contact={this.state.id[i].contact}
                                 hpUrl={this.state.id[i].homepageUrl}
                                 fbUrl={this.state.id[i].fbUrl}
-                                cost={this.state.id[i].cost} ></ClientRestaurant>
+                                cost={this.state.id[i].cost}
+                                status={this.state.id[i].status} ></ClientRestaurant>
                 )
             );
         }
