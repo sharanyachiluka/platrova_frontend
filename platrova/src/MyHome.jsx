@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { BrowserRouter,Route,Switch} from 'react-router-dom';
 import Search from './Search';
-import HoverEffect from './HoverEffect';
+
 import HeaderAfterLog from './HeaderAfterLog';
 import FooterAfterLog from './FooterAfterLog';
+import CircleEffect from "./CircleEffect";
 
 
 class MyHome extends React.Component{
@@ -13,7 +14,7 @@ class MyHome extends React.Component{
                 <div>
                     <HeaderAfterLog/>
                    <Search/>
-             <HoverEffect />
+            <CircleEffect/>
                 <FooterAfterLog/>
                 
                 </div>
