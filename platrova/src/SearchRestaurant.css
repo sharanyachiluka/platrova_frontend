@@ -42,5 +42,10 @@
   .content h4 {
     margin: 5px 0;
   }
-  
+  .box left {
+    text-align: left;
+  }
+  .box right {
+    text-align: right;
+  }
   

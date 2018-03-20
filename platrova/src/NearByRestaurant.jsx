@@ -26,4 +26,3 @@ import { Card, CardImg, CardText,
     }
     
     export default NearByRestaurant;   
-
