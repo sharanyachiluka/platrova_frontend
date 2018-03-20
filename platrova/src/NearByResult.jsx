@@ -120,6 +120,7 @@ onMapCreated(map) {
                                 hpUrl={this.state.id[i]._1.homepageUrl}
                                 fbUrl={this.state.id[i]._1.fbUrl}
                                 cost={this.state.id[i]._1.cost}
+                                img={this.state.id[i]._1.img}
                                 distance={this.state.id[i]._2} ></NearByRestaurant>
                 )
             );

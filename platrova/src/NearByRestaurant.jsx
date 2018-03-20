@@ -8,11 +8,12 @@ import { Card, CardImg, CardText,
             return (
               <Row>
               <div class="box">
-                <p>Restaurant Name:{this.props.name}</p>
-                <p>Restaurant Type:{this.props.type}</p>
-                <p>Cuisine:{this.props.cuisine}</p>
-                <p>Address:{this.props.address}</p>
+                <p><img src={this.props.img} height="200" width="200"></img>&nbsp;&nbsp;
+                <h1>{this.props.name}</h1>
+                   <h4>{this.props.type}
+                    {this.props.cuisine}</h4></p>
                 <p>Area:{this.props.area}</p>
+                <p>Address:{this.props.address}</p>
                <p>Contact:{this.props.contact}</p>
                <p>Timings:{this.props.timings}</p>
                <p>Homepage url:{this.props.hpUrl}</p>
