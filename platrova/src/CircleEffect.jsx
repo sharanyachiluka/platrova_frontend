@@ -3,11 +3,13 @@ import './CircleEffect.css';
 
 var divStyle = {
     width: "100%",
-    height: "600px",
+    height: "700px",
     backgroundColor:'black',
     backgroundRepeat: 'no-repeat',
 	backgroundSize:'cover',
     overflow:'hidden',
+    color:'white',
+    fontWeight:'50px',
  
 };
 
@@ -45,9 +47,10 @@ class CircleEffect extends React.Component {
         var image =[] ;
         var name= [];
         var type = [];
-        var timings =[];        var area = [];
+        var timings =[];  
+        console.log(this.state.id);      var area = [];
         for (var i = 0; i < this.state.id.length; i++) {
-            console.log(this.state.id);
+            
             
             image[i]=this.state.id[i].img;
             name[i]= this.state.id[i].name;
@@ -55,10 +58,11 @@ class CircleEffect extends React.Component {
             timings[i]=this.state.id[i].timings;
             area[i]=this.state.id[i].area;
         }
+    
         return (  
  
 <div style={divStyle}>
-<div class="mytext"> POPULAR RESTAURANTS:</div><br />
+<h2> POPULAR RESTAURANTS:</h2><br />
 <div class="container">
 <div class="row">
   
