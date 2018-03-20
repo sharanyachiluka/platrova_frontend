@@ -5,6 +5,7 @@ import Search from './Search';
 import HeaderAfterLog from './HeaderAfterLog';
 import FooterAfterLog from './FooterAfterLog';
 import CircleEffect from "./CircleEffect";
+import BasedOnLikes from "./BasedOnLikes";
 
 
 class MyHome extends React.Component{
@@ -14,7 +15,7 @@ class MyHome extends React.Component{
                 <div>
                     <HeaderAfterLog/>
                    <Search/>
-            <CircleEffect/>
+            <BasedOnLikes/>
                 <FooterAfterLog/>
                 
                 </div>
