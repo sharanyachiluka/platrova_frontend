@@ -4,7 +4,7 @@ import './CircleEffect.css';
 var divStyle = {
     width: "100%",
     height: "700px",
-    backgroundColor:'black',
+    backgroundColor:'#1B1C1D',
     backgroundRepeat: 'no-repeat',
 	backgroundSize:'cover',
     overflow:'hidden',

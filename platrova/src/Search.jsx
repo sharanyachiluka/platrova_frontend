@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import request from 'superagent';
-import background from './background.jpg';
+import back from './backgroundimg.png';
 import './Search.css';
 import { Button } from 'react-bootstrap';
 import { BrowserRouter, Router, Link } from 'react-router-dom';
@@ -8,9 +8,9 @@ import { BrowserRouter, Router, Link } from 'react-router-dom';
 var sectionStyle = {
     width: "100%",
     height: "700px",
-    backgroundImage: `url(${background})`,
+    backgroundImage: `url(${back})`,
     backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
+    backgroundSize: "2700px 700px",
 
 };
 

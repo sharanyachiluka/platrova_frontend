@@ -4,6 +4,7 @@ import Search from './Search';
 import Header from './Header';
 import Footer from './Footer';
 import CircleEffect from './CircleEffect';
+import Gallery from './Gallery';
 
 
 class Home extends React.Component {
@@ -14,6 +15,7 @@ class Home extends React.Component {
                 
              <Search/>
              <CircleEffect />
+         
            <Footer/>
            
              </div>
