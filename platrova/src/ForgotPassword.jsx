@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardImg, CardText, 
     CardTitle, CardSubtitle,Row,Col } from 'reactstrap';
 import {Button} from 'react-bootstrap';
+import Header from './Header';
 
 var accesstoken=localStorage.getItem("accesstoken");
 class ForgotPasssword extends React.Component {
@@ -47,6 +48,8 @@ class ForgotPasssword extends React.Component {
     }
     render () {
         return (
+            <div>
+            <Header/>
             <center> 
                 <br/><br/><br/>
               <Card onSubmit={this.handleSubmit}><br/>
@@ -60,6 +63,7 @@ class ForgotPasssword extends React.Component {
                 <Button bsStyle="danger" onClick={this.handleSubmit}>Submit</Button>
                </Card>  
               </center>
+              </div>
         );
     }
 

@@ -1,11 +1,12 @@
 import React from 'react';
 import NearByRestaurant from './NearByRestaurant';
+import Hello from './Hello';
 //import { Gmaps, Marker, InfoWindow, Circle } from 'react-gmaps';
 //import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 const params = { v: '3.exp', key: 'AIzaSyC9tvO2YPEmjQcNKGWyrV37vYRU7hdKlbM' };
 const svg = `data:image/svg+xml;charset=UTF-8;base64`;
-const { compose, withProps, withHandlers } = require("recompose");
+const { compose, withProps, withStateHandlers,withHandlers } = require("recompose");
 const {
   withScriptjs,
   withGoogleMap,
@@ -15,6 +16,13 @@ const {
 } = require("react-google-maps");
 
 const MapWithAMarkers = compose(
+    withStateHandlers(() => ({
+        isOpen: false,
+      }), {
+        onToggleOpen: ({ isOpen }) => () => ({
+          isOpen: !isOpen,
+        })
+      }),
     withProps({
       googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",
       loadingElement: <div style={{ height: `100%` }} />,
@@ -27,7 +35,7 @@ const MapWithAMarkers = compose(
   )(props =>
     
     <GoogleMap
-      defaultZoom={13}
+      defaultZoom={11}
       center={{ lat:props.latitude,
         lng: props.longitude}}
     >
@@ -42,7 +50,10 @@ const MapWithAMarkers = compose(
           //  key={marker.photo_id}
             position={{ lat: marker._1.latitude, lng: marker._1.longitude }}
             
-          />
+          >{props.isOpen && <InfoWindow onCloseClick={props.onToggleOpen}>
+          <Hello/>
+        </InfoWindow>}
+      </Marker>
         ))}
    
     </GoogleMap>

@@ -10,7 +10,7 @@ var sectionStyle = {
     height: "700px",
     backgroundImage: `url(${back})`,
     backgroundRepeat: 'no-repeat',
-    backgroundSize: "2700px 700px",
+    backgroundSize: "2600px 700px",
 
 };
 

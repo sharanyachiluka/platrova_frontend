@@ -2,6 +2,7 @@ import React from 'react';
 import {Button} from 'react-bootstrap';
 import './UpdatePassword.css';
 import request from 'superagent'; 
+import HeaderAfterLog from './HeaderAfterLog';
 
 class UpdatePassword extends React.Component {
     constructor(props) {
@@ -78,7 +79,7 @@ class UpdatePassword extends React.Component {
 	}
     render () {
         return (
-            <div><br /><br /><br /><br /><br/><br/>
+            <div><HeaderAfterLog/><br /><br /><br /><br /><br/><br/>
             <div class="card">
              <h1>Update Password</h1>
                 <div class="container" >

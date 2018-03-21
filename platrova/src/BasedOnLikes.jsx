@@ -63,7 +63,7 @@ class BasedOnLikes extends React.Component {
                 cuisine[[i],[j]] =this.state.id[i]._2[j].cuisine;
                 console.log(image[[i],[j]]);
             }
-        } 
+        } console.log(this.state.id);
         return (  
  
 <div style={divStyle}>
@@ -136,12 +136,12 @@ class BasedOnLikes extends React.Component {
  
     
     <div class="ih-item circle colored effect3 right_to_left"><a href="#">
-        <div class="img"><img src={image[[1],[0]]} alt="img"></img></div>
+        <div class="img"><img src={image[[2],[0]]} alt="img"></img></div>
         <div class="info">
-        <h3>{name[[1],[0]]}</h3>
-          <p>{type[[1],[0]]}</p>
-          <p>{cuisine[[1],[0]]}</p>
-          <p>{area[[1],[0]]}</p>
+        <h3>{name[[2],[0]]}</h3>
+          <p>{type[[2],[0]]}</p>
+          <p>{cuisine[[2],[0]]}</p>
+          <p>{area[[2],[0]]}</p>
         </div></a></div>
   
  

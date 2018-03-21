@@ -98,6 +98,7 @@ class SearchResult extends React.Component {
                                 timings={this.state.id[i].timings}
                                 hpUrl={this.state.id[i].homepageUrl}
                                 fbUrl={this.state.id[i].fbUrl}
+                                img={this.state.id[i].img}
                                 cost={this.state.id[i].cost} ></SearchRestaurant>
                 )
             );

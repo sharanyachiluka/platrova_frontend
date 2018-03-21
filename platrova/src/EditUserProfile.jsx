@@ -174,11 +174,11 @@ componentDidMount() {
                                             <div class="login-form-c">  
                                                  <form autoComplete="off" onSubmit={this.handleSubmit}>
 
-                                                     <img src = {this.state.img} alt="pp" width="250" height="210" />&nbsp;&nbsp;
+                                                     <img src = {this.state.img} alt="pp" width="250" height="210" />&nbsp;
 
                                                         <input type="file" id="img" 
                                                         onChange={this.handleFile} 
-                                                        value= {this.state.file} />   <br/>  <br/>  <br/>                                 
+                                                        value= {this.state.file} />   <br/>                              
 
                                                     <input type="text"
                                                           id="name"

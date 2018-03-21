@@ -3,6 +3,7 @@ import { Card, CardImg, CardText,
     CardTitle, CardSubtitle,Row,Col } from 'reactstrap';
 import {Button} from 'react-bootstrap';
 import request from 'superagent';
+import Header from './Header';
 
 class ForgotPassword1 extends React.Component {
 
@@ -63,10 +64,11 @@ console.log(this.props.match.params.token);
     
   render() {
       return (
+          <div>
+              <Header/>
         <Card >
           <CardTitle>Forgot password</CardTitle>
-          <CardSubtitle>Password
-                                            <input type="password"
+          <CardSubtitle>Password                   <input type="password"
                                                 className="password"
                                                 id="password"
                                                 required pattern="^[A-Za-z0-9_.-@]*$"
@@ -74,9 +76,8 @@ console.log(this.props.match.params.token);
                                                 autoFocus
                                                 placeholder="Enter password"
                                                 onChange={this.handlePasswordChange}
-                                                value={this.state.password} /></CardSubtitle><br/>
-        <CardSubtitle>Confirm Password
-                                            <input type="password"
+                                                value={this.state.password} /></CardSubtitle>
+        <CardSubtitle>Confirm Password  <input type="password"
                                                 className="confirmPassword"
                                                 id="confirmPassword"
                                                 required pattern="^[A-Za-z0-9_.-@]*$"
@@ -84,10 +85,11 @@ console.log(this.props.match.params.token);
                                                 autoFocus
                                                 placeholder="Re-enter password"
                                                 onChange={this.handleConfirmPasswordChange}
-                                                value={this.state.confirmPassword} /></CardSubtitle>
+                                                value={this.state.confirmPassword} /></CardSubtitle><br/>
           <Button bsStyle="danger" onClick={this.handleSubmit}>Change Password</Button>
         
          </Card>   
+         </div>
       );
   }
 }
