@@ -1,7 +1,46 @@
 import React from 'react';
 import SearchRestaurant from './SearchRestaurant';
 
+const params = { v: '3.exp', key: 'AIzaSyC9tvO2YPEmjQcNKGWyrV37vYRU7hdKlbM' };
+const svg = `data:image/svg+xml;charset=UTF-8;base64`;
+const { compose, withProps, withHandlers } = require("recompose");
+const {
+  withScriptjs,
+  withGoogleMap,
+  GoogleMap,
+  Marker,
+  InfoWindow,
+} = require("react-google-maps");
 
+const MapWithAMarkers = compose(
+    withProps({
+      googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",
+      loadingElement: <div style={{ height: `100%` }} />,
+      containerElement: <div style={{ height: `400px` }} />,
+      mapElement: <div style={{ height: `100%` }} />,
+    }),
+   
+    withScriptjs,
+    withGoogleMap
+  )(props =>
+    
+    <GoogleMap
+      defaultZoom={10}
+      center={{ lat:17.3850,
+        lng: 78.4867}}
+    >
+    
+        {props.markers.map(marker => (
+          <Marker
+          //  key={marker.photo_id}
+            position={{ lat: marker.latitude, lng: marker.longitude }}
+            
+          />
+        ))}
+   
+    </GoogleMap>
+    
+  );
 
 class SearchResult extends React.Component {
     constructor(props) {
@@ -36,6 +75,12 @@ class SearchResult extends React.Component {
             }));
         }
 
+        onMapCreated(map) {
+            map.setOptions({
+                disableDefaultUI: true
+            });
+        }
+        
 
     render() {
         var Holder = [];
@@ -61,6 +106,7 @@ class SearchResult extends React.Component {
         return (
             <div>
                 <br /><br />
+                <MapWithAMarkers markers={this.state.id}/>
                 <h1><font color="white"><i>Search Results...</i></font></h1>
                  {Holder}
             </div>

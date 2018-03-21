@@ -10,20 +10,26 @@ var divstyle ={
 class SearchRestaurant extends React.Component {
     render () {
         return (
-          <Row>
-          <div class="box">
-            <p>Restaurant Name:{this.props.name}</p>
-            <p>Restaurant Type:{this.props.type}</p>
-            <p>Cuisine:{this.props.cuisine}</p>
-            <p>Address:{this.props.address}</p>
-            <p>Area:{this.props.area}</p>
-           <p>Contact:{this.props.contact}</p>
-           <p>Timings:{this.props.timings}</p>
-           <p>Homepage url:{this.props.hpUrl}</p>
-           <p>Facebookpage url:{this.props.fbUrl}</p>
-           <p>Cost:{this.props.cost}</p>           
-          </div>
-          </Row>
+            <Col sm="4">
+            <div class="box">
+            <div class="clearfix">
+           <img src={this.props.img} height="200" width="300"></img>
+            &nbsp;&nbsp;  {this.props.name}<br/>
+             Type: {this.props.type}<br/>
+              Cuisine: {this.props.cuisine}<br/>
+              Area: {this.props.area}</div><br/>
+           <details>
+               <summary><button type="button" class="btn btn-info">More Info</button></summary>
+              <p>Address:{this.props.address}</p>
+             <p>Contact:{this.props.contact}</p>
+             <p>Timings:{this.props.timings}</p>
+             <p>Homepage url:{this.props.hpUrl}</p>
+             <p>Facebookpage url:{this.props.fbUrl}</p>
+             <p>Cost:{this.props.cost}</p> 
+       </details> 
+              
+            </div>
+            </Col>
         );
     }
 }

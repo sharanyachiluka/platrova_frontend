@@ -18,28 +18,28 @@ var sectionStyle = {
 class Search extends React.Component {
 
     constructor(props) {
-        super(props);
-        
-this.state={
-    search:"",
-    
-  
-}
-         this.handleNearBy = this.handleNearBy.bind(this);
-       this.handleSearchChange = this.handleSearchChange.bind(this);
+                super(props);
+
+        this.state = {
+            search: "",
+
+
+        }
+        this.handleNearBy = this.handleNearBy.bind(this);
+        this.handleSearchChange = this.handleSearchChange.bind(this);
     }
 
-   
-        
+
+
 
     handleSearchChange(event) {
-        this.setState({
-            search : event.target.value,
-        });
-    }
+                this.setState({
+                        search: event.target.value,
+                });
+        }
 
     handleNearBy(event) {
-        window.location.href="/nearbyresult";
+        window.location.href = "/nearbyresult";
     }
 
     render() {
@@ -48,31 +48,32 @@ this.state={
                 <div className="centered">
                     <div className="col-lg-15" className="col-lg-11">
                         <div className="mytexts"> <center>PLATROVA</center></div>
-                        <div className="form-group">
-                            <input  type="text" 
-                                    className="form-control" 
-                                    placeholder="Enter the location or Restaurant name..." 
-                                    id="search" 
-                                    size="200"
-                                    onChange={this.handleSearchChange}
-                                    value={this.state.search} />
-                        </div>
-                        <div className ="center">
-                        <div className="col-lg-8">
-                            <div className="btn btn-block">
-                                <Button bsStyle="danger" bsSize="medium float-right" active >
-                                    <span className="glyphicon glyphicon-search"></span><Link to={'/searchresult/'+this.state.search} class="active" >Search</Link>
+                        <form action="">
+                            <div class="row">
+
+                                <div class="input-group">
+                                    <input type="text"
+                                        id="search"
+                                        class="form-control"
+                                        size="120"
+                                        placeholder="Enter the location or Restaurant name..."
+                                        onChange={this.handleSearchChange}
+                                        value={this.state.search} />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-danger" type="button"><Link to={'/searchresult/' + this.state.search} class="active" >Search</Link></button>
+                                    </span>
+                                </div>
+                            </div>
+                        </form>
+                        <div className="center">
+                            <div className="col-lg-15">
+                                <div className="btn btn-block">
+                                    <Button bsStyle="danger" bsSize="medium float-center" onClick={this.handleNearBy} active >
+                                        <span className="glyphicon glyphicon-search"></span>NearBy
                                  </Button>
+                                </div>
                             </div>
                         </div>
-                        <div className="col-lg-9">
-                            <div className="btn btn-block">
-                            <Button bsStyle="danger" bsSize="medium float-center" onClick={this.handleNearBy} active >
-                                    <span className="glyphicon glyphicon-search"></span>NearBy
-                                 </Button>
-                            </div>
-                        </div>
-                    </div>
                     </div>
                 </div>
             </section>
