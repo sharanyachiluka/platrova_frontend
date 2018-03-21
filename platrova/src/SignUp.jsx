@@ -7,6 +7,7 @@ import request from 'superagent';
 import LoginForm from './LoginForm';
 import Header from './Header';
 import Footer from './Footer';
+import axios,{ post } from 'axios';
 
 var divStyle = {
 	width: "100%",
@@ -26,6 +27,7 @@ class SignUp extends React.Component {
 			password: "",
 			confirmPassword: "",
 			likes:"",
+			image:"",
 			
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -33,6 +35,7 @@ class SignUp extends React.Component {
 		this.handleEmailChange = this.handleEmailChange.bind(this);
 		this.handlePasswordChange = this.handlePasswordChange.bind(this);
 		this.handleLikesChange = this.handleLikesChange.bind(this);
+		this.handleFile = this.handleFile.bind(this);
 		this.handleConfirmPasswordChange = this.handleConfirmPasswordChange.bind(this);
 	}
 
@@ -52,7 +55,7 @@ class SignUp extends React.Component {
 
 			request
 				.post("http://10.10.200.22:9000/users")
-				.send({ name: name, email: email, password: password , likes:likes})
+				.send({ name: name, email: email, password: password , likes:likes , img: this.state.image })
 				.then(
 				(response) => {
 					// response.body will be the returned data from your play app, which is an array of objects
@@ -119,6 +122,42 @@ class SignUp extends React.Component {
 		});
 	}
 
+	handleFile(event) {
+        var file,image;
+        var current=this;
+        console.log(event.target.files[0]);
+     
+      /*  this.setState({
+           file : event.target.files[0]   
+            });*/
+
+            const url = 'http://10.10.200.22:9000/images';
+            const formData = new FormData();
+           
+            formData.append('file',event.target.files[0]);
+          
+            const config={
+                
+                headers: {
+                    'content-type': 'multipart/form-data',
+                    'accept'     : 'application/json'
+                 }
+            }
+            console.log("be");
+         //   return post(url,formData,config)
+            axios.post(
+                url,formData,config )
+                .then(result => {
+                    console.log(result.data);
+                    current.setState({
+                        image: result.data,
+                    });
+                    console.log(this.state.image);
+                    
+                })
+              
+    }  
+
 	render() {
 		return (
 		<div style={divStyle}>
@@ -137,8 +176,8 @@ class SignUp extends React.Component {
 											<input type="text"
 												className="name"
 												id="name"
-												pattern="^[A-Za-z0-9_.-@]*$"
-												maxLength="12"
+												required pattern="^[A-Za-z0-9_.-@]*$"
+												required minLength="6" maxLength="10"
 												autoFocus
 												placeholder="Enter username"
 												onChange={this.handleNameChange}
@@ -170,16 +209,20 @@ class SignUp extends React.Component {
 												autoFocus
 												placeholder="Re-enter password"
 												onChange={this.handleConfirmPasswordChange}
-												value={this.state.confirmPassword} />
+												value={this.state.confirmPassword} required/>
 											<p>Likes</p>
 											<input type="text"
 												className="likes"
 												id="likes"
 												autoFocus
-												placeholder="Ex:NorthIndian,SouthIndian,Mexican,Italian"
+												placeholder="Ex:Chinese,Indian,Italian,Mexican..."
 												onChange={this.handleLikesChange}
-												value={this.state.likes} />
-											<br />
+												value={this.state.likes} required />
+											<p>Profile Picture</p>
+											<input type="file" id="img"
+													onChange={this.handleFile}
+													value= {this.state.file} required/>
+													<br/><br/>
 											<input type="submit" value="Sign up" />
 										</form>
 									</div>
