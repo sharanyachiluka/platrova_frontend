@@ -49,20 +49,7 @@
     text-align: right;
   }
 
-  .collapsible{
-    background-color: #777;
-    color: white;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-  }
-  .active, .collapsible:hover {
-    background-color: #555;
-}
+  
 .split{
   height: 20%;
   width:33.33%;
