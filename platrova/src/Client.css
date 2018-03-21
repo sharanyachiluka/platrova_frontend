@@ -11,6 +11,7 @@ a{text-decoration:none;}
 .txt-center{text-align:center;}/* text align center */
 .float-rt{float:right;margin-top:50px; }/* float right */
 .float-lt{float:left;}/* float left */
+.float-center{float:center;}
 .clear{clear:both;}/* clear float */
 .pos-relative{position:relative;}/* Position Relative */
 .pos-absolute{position:absolute;}/* Position Absolute */

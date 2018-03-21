@@ -20,6 +20,7 @@ import ForgotPassword from './ForgotPassword';
 import ForgotPassword1 from './ForgotPassword1';
 import EditRest from './EditRest';
 import EditUserProfile from './EditUserProfile';
+import EditClientProfile from './EditClientProfile';
 import NearByResult from './NearByResult';
 import BeAPartner from './BeAPartner';
 
@@ -37,6 +38,7 @@ class Routes extends React.Component {
             <Route path="/userprofile" exact component={UserProfile}/>
             <Route path="/editprofile" exact component={EditUserProfile}/>
             <Route path="/clientprofile" exact component={ClientProfile}/>
+            <Route path="/editclientprofile" exact component={EditClientProfile}/>
             <Route path="/restaurants" exact component={GetAllRest}/>
             <Route path="/editrestaurant/:Id" exact component={EditRest}/>
             <Route path="/updatepassword" exact component={UpdatePassword}/>

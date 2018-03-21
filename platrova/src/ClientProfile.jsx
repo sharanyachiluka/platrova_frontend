@@ -13,9 +13,15 @@ var imageStyle = {
     backgroundSize: 'cover',
     overflow: 'hidden'
 }
-/*var divStyle = {
-    width: '100%',
-}*/
+var divStyle = {
+    float: "right",
+    margin : "0.7px",
+}
+
+var up = {
+    float: "right",
+    margin: "10px",
+}
 var accesstoken=localStorage.getItem("accesstoken");
  
 class ClientProfile extends React.Component {
@@ -67,13 +73,23 @@ class ClientProfile extends React.Component {
             <div class="container">
                 <center><h3><b>User Name:{this.state.name}</b></h3></center>
                 <p>Email:{this.state.email}</p><br/>
-                <div className="float-lt">
+                    
+              <div className="float-lt">
+                <p><Button bsStyle="danger"><Link to='/createres' class="active">Create Restaurant</Link></Button></p>
+                </div>
+                <div style={divStyle}>
                 <p><Button bsStyle="danger"><Link to='/restaurants' class="active">My Restaurants</Link></Button></p>
               </div>
-              <div className="float-lt">
-              <p><Button bsStyle="danger"><Link to='/updatepassword' class="active">Update Password</Link></Button></p></div>
-                <div className="float-center">
-                <p><Button bsStyle="danger"><Link to='/createres' class="active">Create Restaurant</Link></Button></p></div>
+
+                 <div className="float-center">
+                <p><Button bsStyle="danger"><Link to='/editclientprofile' class="active">Edit Profile</Link></Button></p>
+                </div>
+
+                        <div style={up}>
+              <p><Button bsStyle="danger"><Link to='/updatepassword' class="active">Update Password</Link></Button></p>
+              </div>
+               
+
             </div>
             </div>
             </div>
