@@ -5,7 +5,7 @@ import './Client.css';
 import request from 'superagent';
  import bann from './bann.jpg';
  import HeaderAfterLog from './HeaderAfterLog';
-
+ import axios,{ post } from 'axios';
 
 var bg = {
     width: "100%",
@@ -44,6 +44,8 @@ class EditRest extends React.Component {
             fbUrl: "",
             cost: "", 
             status: "",
+            img:"",
+            image:"",
            
         };
 
@@ -81,6 +83,7 @@ class EditRest extends React.Component {
             fbUrl: result1.fbUrl,
             cost: result1.cost, 
             status: result1.status,
+            img:result1.img,
            
             });
            if(this.state.status === "New"){
@@ -103,6 +106,7 @@ class EditRest extends React.Component {
         this.handlehpUrlChange = this.handlehpUrlChange.bind(this);
         this.handlefbUrlChange = this.handlefbUrlChange.bind(this);
         this.handleCostChange = this.handleCostChange.bind(this);
+        this.handleFile = this.handleFile.bind(this);
 
   }
 
@@ -129,7 +133,7 @@ class EditRest extends React.Component {
         var refreshtoken,expirytime;
         var accesstoken=localStorage.getItem("accesstoken");
         var role='user';
-        var form = JSON.stringify({name : this.state.name, type:type, cuisine: cuisine, address : address,contact : contact, timings: timings, hpUrl : hpUrl, fbUrl : fbUrl, cost : cost, status: status});
+        var form = JSON.stringify({name : this.state.name, type:type, cuisine: cuisine, address : address,contact : contact, timings: timings, hpUrl : hpUrl, fbUrl : fbUrl, cost : cost, status: status,image:this.state.image});
         fetch ( "http://10.10.200.22:9000/restaurant/edit" , 
         {
             method: "POST",     
@@ -242,6 +246,41 @@ var cost = document.getElementById("cost");
     });
     }
     
+handleFile(event) {
+    var file,image;
+    var current=this;
+    console.log(event.target.files[0]);
+ 
+  /*  this.setState({
+       file : event.target.files[0]   
+        });*/
+
+        const url = 'http://10.10.200.22:9000/images';
+        const formData = new FormData();
+       
+        formData.append('file',event.target.files[0]);
+      
+        const config={
+            
+            headers: {
+                'content-type': 'multipart/form-data',
+                'accept'     : 'application/json'
+             }
+        }
+        console.log("be");
+     //   return post(url,formData,config)
+        axios.post(
+            url,formData,config )
+            .then(result => {
+                console.log(result.data);
+                current.setState({
+                    image: result.data,
+                });
+                console.log(this.state.image);
+                
+            })
+          
+}  
 
     render() {
         var Holder = [];
@@ -267,6 +306,12 @@ var cost = document.getElementById("cost");
                                         <p>Create Accounts..Make Profits..</p>
                                             <div class="login-form-c">  
                                                  <form autoComplete="off" onSubmit={this.handleSubmit}>
+                                                    <img src = {this.state.img} alt="image" width="250" height="210" /><br/><br/>
+
+                                                    <input type="file" id="img" 
+                                                    onChange={this.handleFile} 
+                                                    value= {this.state.file} />   <br/>                              
+
                                                     <input type="text"
                                                           id="name"
                                                           value={this.state.name} disabled="disabled"

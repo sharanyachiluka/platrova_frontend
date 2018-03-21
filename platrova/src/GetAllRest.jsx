@@ -62,6 +62,7 @@ class GetAllRest extends React.Component {
                                 hpUrl={this.state.id[i].homepageUrl}
                                 fbUrl={this.state.id[i].fbUrl}
                                 cost={this.state.id[i].cost}
+                                img={this.state.id[i].img}
                                 status={this.state.id[i].status} ></ClientRestaurant>
                 )
             );

@@ -57,6 +57,7 @@ class BasedOnLikes extends React.Component {
          var area ;
          var cuisine; 
          var likename;   var Holder = [];
+         console.log(this.state.id);
         for (var i = 0; i < this.state.id.length; i++) {
             
             for(var j=0;j < this.state.id[i]._2.length;j++) {
