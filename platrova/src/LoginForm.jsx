@@ -130,14 +130,7 @@ class LoginForm extends React.Component {
 												placeholder="Enter username"
 												onChange={this.handleNameChange}
 												value={this.state.name} required />
-											<p>email id </p>
-											<input type="email"
-												className="email"
-												id="email"
-												autoFocus
-												placeholder="Enter email id"
-												onChange={this.handleEmailChange}
-												value={this.state.email} required />
+											
 											<p>Password</p>
 											<input type="password"
 												className="password"
