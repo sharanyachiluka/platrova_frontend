@@ -9,7 +9,7 @@ import request from 'superagent';
 
 var bg = {
     width: "100%",
-    height: "1140px",
+    height: "1290px",
     backgroundImage: `url(${bann})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize:'cover',
@@ -318,7 +318,7 @@ handleFile(event) {
                                                        />
                                                     <input type="text" 
                                                     id="type" 
-                                                      placeholder="Ex:FoodTruck,Bar & Restaurant,Café..." 
+                                                      placeholder="Ex:FoodTruck,Restaurant,Café..." 
                                                     onChange={this.handleTypeChange}
                                                     value={this.state.type}
                                                     required/>                                          
