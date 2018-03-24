@@ -14,18 +14,17 @@ import { Card, CardImg, CardText,
               <div class="clearfix">
              <img src={this.props.img} height="200" width="300"></img>
               &nbsp;&nbsp;  {this.props.name}<br/>
-               Type: {this.props.type}<br/>
-                Cuisine: {this.props.cuisine}<br/>
-                    Distance: {this.props.distance}km<br/>
-                Area: {this.props.area}</div><br/>
-             <details>
-                 <summary><button type="button" class="btn btn-info">More Info</button></summary>
-                <p>Address:{this.props.address}</p>
-               <p>Contact:{this.props.contact}</p>
-               <p>Timings:{this.props.timings}</p>
-               <p>Homepage url:{this.props.hpUrl}</p>
-               <p>Facebookpage url:{this.props.fbUrl}</p>
-               <p>Cost:{this.props.cost}</p> 
+              <i class="material-icons">restaurant</i> {this.props.type}<br/>
+            <i class="material-icons">menu</i> {this.props.cuisine}<br/>
+            <i class="material-icons">place</i>{this.props.area}</div><br/>
+           <details>
+               <summary><button type="button" class="btn btn-info">More Info</button></summary>
+              <p><i class="material-icons">directions</i>{this.props.address}</p>
+             <p><i class="material-icons">call</i>{this.props.contact}</p>
+             <p><i class="material-icons" md-18>timer</i> {this.props.timings}</p>
+             <p><i class="material-icons">language</i>{this.props.hpUrl}</p>
+             <p><i class="material-icons">public</i>{this.props.fbUrl}</p>
+             <p><i class="material-icons">star</i>Rs.{this.props.cost} for 2</p>
          </details> 
                 
               </div>

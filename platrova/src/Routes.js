@@ -23,6 +23,7 @@ import EditUserProfile from './EditUserProfile';
 import EditClientProfile from './EditClientProfile';
 import NearByResult from './NearByResult';
 import BeAPartner from './BeAPartner';
+import MenuTry from './MenuTry';
 
 class Routes extends React.Component {
     render() {
@@ -46,6 +47,7 @@ class Routes extends React.Component {
             <Route path="/forgotpassword/:token" exact component={ForgotPassword1}/>
             <Route path="/searchresult/:search" exact component={SearchResult}/>
             <Route path="/nearbyresult" exact component={NearByResult}/>
+            <Route path="/menutry" exact component={MenuTry}/>
        </div>   
             
         );
